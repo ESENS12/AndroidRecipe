@@ -70,6 +70,8 @@
 
     <string name="pref_title_ringtone">Ringtone</string>
     <string name="pref_ringtone_silent">Silent</string>
+    <string name="menu_Settings">Settings</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
