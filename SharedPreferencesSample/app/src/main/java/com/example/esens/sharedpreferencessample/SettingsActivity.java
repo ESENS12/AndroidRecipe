@@ -97,6 +97,9 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
 
     private void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
+        //actionbar title 변경(기본은 app name임)
+        actionBar.setTitle(R.string.menu_Settings);
+
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);  //액션바 상단에 홈 버튼(<-) 추가
 

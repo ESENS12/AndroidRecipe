@@ -1,6 +1,7 @@
 package com.example.esens.sharedpreferencessample;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,16 +17,18 @@ import android.widget.ViewAnimator;
 /**
  *  SettingActivity를 불러와서 사용 하는 예, Setting에서 preferences 를 활용해서 옵션 저장
  *  필요하다면 setting 메뉴의 preferences item 을 수정하거나 메뉴를 수정하여 사용
- *
+ *  sharedpreferences를 활용해서 first launch 감지 및 데이터 CRUD (SettingsActivity의 preferences로 활용중)
  */
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "ESENS" + MainActivity.class.getSimpleName();
+    SharedPreferences prefs = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        prefs = getSharedPreferences("com.example.esens.sharedpreferencessample", MODE_PRIVATE);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
@@ -40,6 +43,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //setupActionBar();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (prefs.getBoolean("firstrun", true)) {
+            //첫 실행 시 prefs에 저장한다.
+            prefs.edit().putBoolean("firstrun", false).commit();
+        }
+
     }
 
     @Override
