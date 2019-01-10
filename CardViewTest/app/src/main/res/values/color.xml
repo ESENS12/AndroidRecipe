@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<resources>
+ <!--<color name="bckg">#19394e</color>-->
+ <color name="bckg">#000000</color>
+ <!--<color name="bckg">#fafafa</color>-->
+ <color name="filn">#607D8B</color>
+ <color name="btnbg_ssplash">#858F9F</color>
+
+ <color name="pressed1">#385A74</color> 
+ <color name="pressed2">#385A74</color>
+ 
+ <color name="focused1">#FFBFDDEA</color> 
+ <color name="focused2">#FF3F6683</color> 
+  
+ <color name="default1">#FF446F8E</color> 
+ <color name="default2">#FF6191B4</color> 
+ 
+ <color name="stroke">#FF8CC8D2</color> 
+ 
+ <color name="lightGray">#FFaaaaaa</color>
+
+ <color name="spots_dialog_color">@android:color/holo_blue_dark</color>
+ <color name="float_transparent">#00000000</color>
+ <color name="sweet_dialog_bg_color">#FFFFFF</color>
+ <color name="button_text_color">#FFFFFF</color>
+ <color name="gray_btn_bg_color">#D0D0D0</color>
+ <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
+ <color name="blue_btn_bg_color">#19394e</color>
+ <color name="blue_btn_bg_pressed_color">#19394e</color>
+ <color name="red_btn_bg_color">#DD6B55</color>
+ <color name="red_btn_bg_pressed_color">#CD5B55</color>
+ <color name="error_stroke_color">#F27474</color>
+ <color name="success_stroke_color">#A5DC86</color>
+ <color name="trans_success_stroke_color">#33A5DC86</color>
+ <color name="warning_stroke_color">#F8BB86</color>
+ <color name="text_color">#575757</color>
+ <color name="material_blue_grey_80">#ff37474f</color>
+ <color name="material_blue_grey_90">#ff263238</color>
+ <color name="material_blue_grey_95">#ff21272b</color>
+ <color name="material_deep_teal_20">#ff80cbc4</color>
+ <color name="material_deep_teal_50">#ff009688</color>
+ <color name="fatos_back_color">#19394e</color>
+
+ <color name="fmp_route_option_1">#ff6c6c</color>
+ <color name="fmp_route_option_2">#6796ff</color>
+ <color name="fmp_route_option_3">#f3c23e</color>
+ <color name="fmp_route_option_4">#15b524</color>
+ <color name="fmp_route_option_5">#02e4c1</color>
+ <color name="fmp_route_option_6">#b06aff</color>
+
+
+ <color name="fmp_mapmodeinfo">#f2d9aa</color>
+
+</resources>

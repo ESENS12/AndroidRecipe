@@ -1,0 +1,625 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">CardViewTest</string>
+    <string name="color_picker_default_title">Route Line Color</string>
+    <string name="color_picker_manual_color_hint" tools:ignore="MissingTranslation">or enter a color code here</string>
+    <string name="init_title">Location info usage agreement</string>
+    <string name="init_text">Operation during driving is dangerous,so please use it after\nstopping.You must use your current location\ninformation to provide accurate directions.\nDo you agree?</string>
+    <string name="init_text_port">Operation during driving\nis dangerous,\nso please use it after stopping.\n\nYou must use your current\nlocation information to provide\naccurate directions.\n\nDo you agree?</string>
+    <string name="hello">Hello World, FATOS Navigation</string>
+    <string name="action_settings">Action Settingd</string>
+    <string name="longTouchPlease">길게 터치한 후 기다려 주세요.</string>
+    <string name="map_not_ready">Map is not ready yet</string>
+    <string name="searchName">검색명</string>
+    <string name="rpStartLat">출발지위도</string>
+    <string name="rpStartLon">출발지경도</string>
+    <string name="rpDestLat">목지지위도</string>
+    <string name="rpDestLon">목지지경도</string>
+    <string name="ahead"> 앞 </string>
+    <string name="ahead_en"> ahead </string>
+    <string name="ahead_ja"> 前方に </string>
+    <string name="ahead_ve"> tới trước </string>
+    <string name="ahead_zh"> 先 </string>
+    <string name="ahead2">  </string>
+    <string name="reRoute"> </string>
+    <string name="TrafficReroute"> </string>
+    <string name="INVALIED_STARTGOAL_SAME"> The start and the goal point is the same location. Please try again. </string>
+    <string name="INVALIED_STARTGOAL_NULL"> There is no input to the start and the goal point </string>
+    <string name="INVALIED_START_NULL"> Please set the start point </string>
+    <string name="INVALIED_GOAL_NULL"> Please set the goal point </string>
+    <string name="INVALIED_ROUTE_FAILED"> Route call failed </string>
+    <string name="INVALIED_NULL"> Certain condition will not be met. </string>
+    <string name="INVALIED_STARTPOS_NOT_SELECTED"> Please set the start point </string>
+    <string name="INVALIED_GOALPOS_NOT_SELECTED"> Please set the goal point </string>
+    <string name="TTS_IC"> 나들목 </string>
+    <string name="TTS_LASTWORD1"> </string>
+    <string name="TTS_LASTWORD2"> </string>
+    <string name="TTS_VIA">  </string>
+    <string name="TTS_GOAL"> </string>
+
+    <string name="string_comfirm">Yes</string>
+    <string name="string_yes">Yes</string>
+    <string name="string_no">No</string>
+
+    <string name="string_menu">Menu</string>
+    <string name="string_getdirections">Get Directions</string>
+    <string name="string_searchev">EV charging station</string>
+    <string name="string_reroute">Redirection</string>
+    <string name="string_changerouteoption">Route options</string>
+    <string name="string_viewroutesummary">Route summary</string>
+    <string name="string_routecancel">Cancel route</string>
+    <string name="string_routehistory">Route history</string>
+    <string name="string_preferences">Preferences</string>
+    <string name="string_startsimulation">Start Simulation</string>
+    <string name="string_stopsimulation">Stop Simulation</string>
+
+    <string name="string_currentlocation">Current location</string>
+    <string name="string_entersearchname">Enter your destination</string>
+    <string name="string_frequent">Frequent</string>
+    <string name="string_myplace">My place</string>
+    <string name="string_results">Results</string>
+    <string name="string_results_sort">Frequent</string>
+    <string name="string_resultpage_sort">Accuracy</string>
+    <string name="string_add">Add</string>
+    <string name="string_delete">Delete</string>
+    <string name="string_routing">Goal</string>
+    <string name="string_set_startpos">Start</string>
+    <string name="string_rename">Rename</string>
+    <string name="string_previous">Previous</string>
+    <string name="string_allview">View all</string>
+    <string name="string_empty_text">There is no list of My place.</string>
+    <string name="string_history_empty_text">There is no list of Route history.</string>
+
+    <string name="string_routesummary">Route summary</string>
+    <string name="string_optimal">Optimal</string>
+    <string name="string_option">Opt.</string>
+    <string name="string_distance">Distance</string>
+    <string name="string_time">Time</string>
+    <string name="string_map">Map</string>
+    <string name="string_list">List </string>
+    <string name="string_simulation">Simulation</string>
+    <string name="string_startjourney">Go</string>
+
+    <string name="string_tripreport">Trip Report</string>
+    <string name="string_tripdistance_express"> exceed.</string>
+    <string name="string_tripdistance_shorten"> less.</string>
+    <string name="string_tripdistance_same"> same.</string>
+    <string name="string_triptime_express">10h Excess</string>
+    <string name="string_triptime_shorten">10h Shorten</string>
+    <string name="string_triptime_realroute">Real path</string>
+    <string name="string_triptime_firstroute">Initial path</string>
+    <string name="string_triphistory">Route History</string>
+
+    <string name="string_searchforevcharging">EV charging station</string>
+    <string name="string_dcchademo">DC\nCHAdeMO</string>
+    <string name="string_combo">DC\nCombo</string>
+    <string name="string_acph">AC3ph</string>
+    <string name="string_free">Free</string>
+    <string name="string_pay">Pay</string>
+    <string name="string_freepay">All</string>
+    <string name="string_moderate">Moderate</string>
+    <string name="string_rapid">Rapid</string>
+    <string name="string_outlet">220v\noutlet</string>
+    <string name="string_search">Search</string>
+    <string name="string_evable_charge">Available</string>
+    <string name="string_evable_all">All</string>
+
+    <string name="string_settings">Setting</string>
+    <string name="string_general">General</string>
+    <string name="string_navigation">Navigation</string>
+    <string name="string_vehicleinfo">Vehicle info</string>
+    <string name="string_distanceunit">Distance unit</string>
+    <string name="string_speedunit">Speed unit</string>
+    <string name="string_defaultlanguage">Default Language</string>
+    <string name="string_alwaysactive">Always Active</string>
+    <string name="string_termsofUse">Terms of Use</string>
+    <string name="string_versioninfo">Version info</string>
+    <string name="string_copyright">Copyright</string>
+    <string name="string_labtest">Lab</string>
+
+    <string name="string_compact">Compact</string>
+    <string name="string_standard">Standard</string>
+    <string name="string_midvan">Mid-VAN</string>
+    <string name="string_lvan">L-VAN</string>
+    <string name="string_truck">Truck</string>
+    <string name="string_spurpose">S-Purpose</string>
+    <string name="string_gasoline">Gasoline</string>
+    <string name="string_premium">Premium</string>
+    <string name="string_diesel">Diesel</string>
+    <string name="string_lpg">LPG</string>
+    <string name="string_electricity">Electricity</string>
+
+    <string name="string_vehicletype">Vehicle type</string>
+    <string name="string_gastype">Gas type</string>
+
+    <string name="string_app">App</string>
+    <string name="string_buildnumber">Build number</string>
+    <string name="string_basemapdb">Background data</string>
+    <string name="string_searchdb">Search data</string>
+    <string name="string_sdi">Safe driving data</string>
+
+    <string name="string_pathlinecolor">Path line color</string>
+    <string name="string_routeoptions">Route options</string>
+    <string name="string_mapcolortheme">Map color theme</string>
+    <string name="string_dynamiczoom">Smart driving mode</string>
+    <string name="string_highwaymode">Highway mode</string>
+    <string name="string_mapdownload">Map download</string>
+    <string name="string_option_optimal">Optimal</string>
+    <string name="string_option_dem">DEM</string>
+    <string name="string_option_airmode">Air mode</string>
+
+
+    <string name="string_routerecovery">Route recovery</string>
+    <string name="string_routebefore">Would you like to get directions \nto the route just before?</string>
+    <string name="string_backbtnexit">Press Back button again to exit.</string>
+    <string name="string_reroute_status">Redirection is complete.</string>
+    <string name="string_routecancel_status">Route guidance canceled.</string>
+    <string name="string_arrived_destination">You\'ve arrived at your destination.</string>
+    <string name="string_already_registered">It is already registered.</string>
+    <string name="string_registered">Registered.</string>
+    <string name="string_removed">Removed.</string>
+    <string name="string_settheorigin">Please set the origin.</string>
+    <string name="string_nosave_myplace">You have no saved My place.</string>
+    <string name="string_noresult_found">No Results Found.</string>
+    <string name="string_nosaved_frequent">There is no saved Frequent place.</string>
+    <string name="string_preparingtheservice">We are preparing the service.</string>
+    <string name="string_set_origin">Your origin has been set.</string>
+    <string name="string_gettingdirections">Getting directions.</string>
+    <string name="string_viewall">View all</string>
+    <string name="string_allcount">Total</string>
+    <string name="string_getdirectionsfailed_server">[1001] Get directions failed.</string>
+    <string name="string_googleroutefail_inkorea_server">[1002] The Google map API does not provide navigation to the Korean region.</string>
+    <string name="string_googleroutefail_inkorea_server_fatos">The Google map API does not provide navigation in Korea, so it is navigated to FATOS Map.</string>
+    <string name="string_evsearch_failed_server">[2001] Service is delayed.</string>
+    <string name="string_getdirectionsfailed">[101] Get directions failed.</string>
+    <string name="string_hour">h</string>
+    <string name="string_min">m</string>
+    <string name="string_sec">s</string>
+    <string name="string_routeguidance">Route guidance</string>
+    <string name="string_routeguidance_exit">Are you sure you want \nto exit route guidance?</string>
+    <string name="string_routesimul_exit">Are you sure you want to \nexit route simulation?</string>
+
+    <string name="string_alert">Alert</string>
+    <string name="string_language_change">Do you want to change the language setting?\nSome screens may not be displayed\nin the set language</string>
+
+    <string name="string_searching">Search..</string>
+    <string name="string_waitsummarydata">Generating path summary data..</string>
+    <string name="string_tripinfo">Generating path trip info..</string>
+
+    <string name="string_ev_chademo">chademo</string>
+    <string name="string_ev_chaac">chademo/AC3</string>
+    <string name="string_ev_dccombo">DCcombo</string>
+    <string name="string_ev_chadc">chademo/DCcombo</string>
+    <string name="string_ev_acdc">chademo/AC3/DCcombo</string>
+    <string name="string_ev_ac">AC3</string>
+    <string name="string_ev_noinformation">No Information</string>
+    <string name="string_ev_slowcharge">Moderate</string>
+
+
+    <string name="string_ev_stopoper">Stopoper</string>
+    <string name="string_ev_wait">Wait</string>
+    <string name="string_ev_stopmng">Stopmng</string>
+    <string name="string_ev_checking">Checking</string>
+    <string name="string_ev_notconn">Not Conn</string>
+    <string name="string_ev_expect">Expect</string>
+
+    <string name="string_ev_rapid">Rapid</string>
+    <string name="string_ev_slow">Moderate</string>
+    <string name="string_ev_both">Both</string>
+    <string name="string_ev_twotwobolt">220V</string>
+
+    <string name="string_ev_detail_type">Type</string>
+    <string name="string_ev_detail_hour">Hour</string>
+    <string name="string_ev_detail_status">Status</string>
+    <string name="string_ev_detail_etc">Etc</string>
+
+    <string name="string_set_origin_routing">Set Origin</string>
+    <string name="location_updated">Location Updated: %1$s</string>
+
+    <string name="force_closed">Update the program to the latest version. Click the Update button to go to the App Store.</string>
+    <string name="force_goplaystore">Go to PlayStore</string>
+    <string name="force_exitapp">Exit App</string>
+    <string name="string_avgspeed">AvgSpeed</string>
+
+    <string name="sdi_ahead"></string>
+    <string name="sdi_speed">speed </string>
+    <string name="sdi_km"> </string>
+    <string name="sdi_mi"> </string>
+    <string name="sdi_kmperhour">km per hour</string>
+    <string name="sdi_mileperhour">mile per hour</string>
+    <string name="sdi_type1">there is an overspeed detection point</string>
+    <string name="sdi_type2">there is an overspeed and bus-only detection point</string>
+    <string name="sdi_type3">there is an overspeed detection point</string>
+    <string name="sdi_type4">there is an average speed detection start point</string>
+    <string name="sdi_type5">there is an average speed detection end point</string>
+    <string name="sdi_type6">there is a bad loading checkpoint</string>
+    <string name="sdi_type7">there is an overspeed detection point</string>
+    <string name="sdi_type8">there is a bus-only detection point</string>
+    <string name="sdi_type9">there is a removable overspeed detection point</string>
+    <string name="sdi_type10">there is an overload checkpoint</string>
+    <string name="sdi_type11">there is an overload checkpoint</string>
+    <string name="sdi_type12">there is a vehicle number recognition point</string>
+    <string name="sdi_type13">there is a traffic information collection point</string>
+    <string name="sdi_type14">there is a traffic signal violation and overspeed detection point</string>
+    <string name="sdi_type15">there is a traffic signal violation and overspeed detection point</string>
+    <string name="sdi_type16">주정차 단속 지점입니다.</string>
+    <string name="sdi_type17">갓길 단속 카메라 지점입니다.</string>
+    <string name="sdi_type18">끼어들기 단속 카메라 지점입니다.</string>
+    <string name="sdi_type19">가변 차로 단속 지점입니다.</string>
+
+    <string name="sdi_type30">사고다발 지역 입니다.</string>
+    <string name="sdi_type31">급커브 지역 입니다.</string>
+    <string name="sdi_type32">안개 지역 입니다.</string>
+    <string name="sdi_type33">어린이 보호 구역 입니다.</string>
+    <string name="sdi_type34">어린이 보호 구역 종점 지점입니다.</string>
+    <string name="sdi_type35">철길 건널목 입니다.</string>
+    <string name="sdi_type36">과속 방지턱 입니다.</string>
+
+
+    <string name="sdi_ahead_jp">約</string>
+    <string name="sdi_speed_jp">時速 </string>
+    <string name="sdi_km_jp"> キロメートル </string>
+    <string name="sdi_mi_jp"> マイル </string>
+    <string name="sdi_kmperhour_jp">毎時キロメートル</string>
+    <string name="sdi_mileperhour_jp">毎時マイル</string>
+
+    <string name="sdi_type1_jp">スピード取り締まり区間です.</string>
+    <string name="sdi_type2_jp">スピードとバスレーン取り締まり区間です。</string>
+    <string name="sdi_type3_jp">スピード取り締まり区間です。</string>
+    <string name="sdi_type4_jp">区間取り締まりの開始点です。</string>
+    <string name="sdi_type5_jp">区間取り締まりの終点です。</string>
+    <string name="sdi_type6_jp">積載不良取締ポイントです。</string>
+    <string name="sdi_type7_jp">標識不良取り締まりポイントです。</string>
+    <string name="sdi_type8_jp">バスレーン取り締まり区間です。</string>
+    <string name="sdi_type9_jp">移動式カメラ取り締まり区間です。</string>
+    <string name="sdi_type10_jp">過載違反取締りカメラポイントです。</string>
+    <string name="sdi_type11_jp">過載違反取締りカメラポイントです。</string>
+    <string name="sdi_type12_jp">車両番号認識装置のカメラポイントです。</string>
+    <string name="sdi_type13_jp">交通情報収集装置です</string>
+    <string name="sdi_type14_jp">信号とスピード取り締まり区間です.</string>
+    <string name="sdi_type15_jp">信号とスピード取り締まり区間です.</string>
+
+
+    <string name="sdi_ahead_ve">về</string>
+    <string name="sdi_speed_ve">tốc độ </string>
+    <string name="sdi_km_ve">cây số </string>
+    <string name="sdi_mi_ve"> dặm </string>
+    <string name="sdi_kmperhour_ve">Km mỗi giờ</string>
+    <string name="sdi_mileperhour_ve">Mỗi giờ dặm</string>
+
+    <string name="sdi_type1_ve">Tốc độ là phần thực thi.</string>
+    <string name="sdi_type2_ve">Đó là phần tốc độ và xe buýt thực thi làn。</string>
+    <string name="sdi_type3_ve">Tốc độ là phần thực thi。</string>
+    <string name="sdi_type4_ve">Là điểm khởi đầu của bộ phận đàn áp。</string>
+    <string name="sdi_type5_ve">Đây là điểm kết thúc của phần chiến dịch đàn áp。</string>
+    <string name="sdi_type6_ve">Đang tải là điểm thi xấu。</string>
+    <string name="sdi_type7_ve">Nó được dán nhãn điểm đàn áp xấu。</string>
+    <string name="sdi_type8_ve">Bus làn là phần thực thi。</string>
+    <string name="sdi_type9_ve">Nó là một phần thực thi máy ảnh điện thoại di động。</string>
+    <string name="sdi_type10_ve">Đó là quá tải điểm camera bẫy。</string>
+    <string name="sdi_type11_ve">Đó là quá tải điểm camera bẫy。</string>
+    <string name="sdi_type12_ve">Đây là điểm camera của chiếc xe hệ thống nhận dạng số。</string>
+    <string name="sdi_type13_ve">thiết bị thu thập thông tin giao thông này</string>
+    <string name="sdi_type14_ve">Đây là một khu vực tín hiệu và thực thi tốc độ.</string>
+    <string name="sdi_type15_ve">Đây là một khu vực tín hiệu và thực thi tốc độ.</string>
+
+    <string name="sdi_ahead_zh">关于</string>
+    <string name="sdi_speed_zh">MPH </string>
+    <string name="sdi_km_zh"> 公里 </string>
+    <string name="sdi_mi_zh"> 英里 </string>
+    <string name="sdi_kmperhour_zh">公里每小时</string>
+    <string name="sdi_mileperhour_zh">英里每小时</string>
+    <string name="sdi_speedis_zh">限速</string>
+
+    <string name="sdi_type1_zh">超速是间歇区间。</string>
+    <string name="sdi_type2_zh">间歇时间间隔和在加快公交专用道。</string>
+    <string name="sdi_type3_zh">超速是间歇区间。</string>
+    <string name="sdi_type4_zh">间歇时间间隔的起点。</string>
+    <string name="sdi_type5_zh">强制执行期间结束。</string>
+    <string name="sdi_type6_zh">加载失败是间歇性的点。</string>
+    <string name="sdi_type7_zh">注册mibuchak相机执法分局.</string>
+    <string name="sdi_type8_zh">强制执行期间公交专用车道。</string>
+    <string name="sdi_type9_zh">甲李·多赛克间歇区间。</string>
+    <string name="sdi_type10_zh">超载违反执法摄像机点。</string>
+    <string name="sdi_type11_zh">超载违反执法摄像机点。</string>
+    <string name="sdi_type12_zh">车号识别系统摄像机点。</string>
+    <string name="sdi_type13_zh">交通信息收集设备。</string>
+    <string name="sdi_type14_zh">信号和速度强制部。</string>
+    <string name="sdi_type15_zh">信号和速度强制部。</string>
+
+
+    <!--파토스 언어 설정 관련 ArrayList-->
+    <string name="string_set_lanuage">Language setting</string>
+
+    <!--<string-array name="country_names">-->
+    <!--<item>Korean</item>-->
+    <!--<item>English</item>-->
+    <!--<item>German</item>-->
+    <!--<item>French</item>-->
+    <!--<item>Dutch</item>-->
+    <!--<item>Chinese</item>-->
+    <!--<item>Japanese</item>-->
+    <!--<item>Vietnamese</item>-->
+    <!--</string-array>-->
+    <string-array name="country_names">
+        <item>한국어</item>
+        <item>English</item>
+        <item>Deutsch</item>
+        <item>Français</item>
+        <item>Nederlands</item>
+        <item>简体中文</item>
+        <item>日本語</item>
+        <item>Tiếng Việt</item>
+    </string-array>
+    <string-array name="country_codes">
+        <item>410</item>
+        <item>840</item>
+        <item>276</item>
+        <item>250</item>
+        <item>528</item>
+        <item>156</item>
+        <item>392</item>
+        <item>704</item>
+    </string-array>
+
+    <string-array name="labtest_name">
+        <item>FATOS Map API</item>
+        <item>Google maps API</item>
+        <item>T map API</item>
+        <item>NAVER Maps API</item>
+        <item>HERE Maps API</item>
+        <item>Development server Connection</item>
+        <item>Local Route Mode</item>
+        <item>Simul GPS</item>
+        <item>Draw GPS</item>
+    </string-array>
+    <string-array name="labtest_explain">
+        <item>The data is received from the FATOS Map server. Open Street map-based background maps as well as global POI search using Google and NAVER data and intercontinental route search of FATOS Map only.</item>
+        <item>Route data is provided using the Google maps API. This allows you to navigate anywhere in the world except Korea.</item>
+        <item>The data is received from the T map API Center. It is possible to search POI and route of T map as well as SK map based background map.</item>
+        <item>Route data is provided using the NAVER Maps API. You can navigate anywhere in Korea.</item>
+        <item>Route data is provided using the HERE Maps API. You can navigate anywhere in Korea.</item>
+        <item>Development server mode.</item>
+        <item>Local route navigation mode.</item>
+        <item>Simul GPS Mode</item>
+        <item>Draw GPS</item>
+    </string-array>
+
+    <string-array name="labtest_codes">
+        <item>1</item>
+        <item>7</item>
+        <item>11</item>
+        <item>5</item>
+        <item>12</item>
+        <item>8088</item>
+        <item>8089</item>
+        <item>8090</item>
+        <item>8091</item>
+    </string-array>
+
+    <integer-array name="labtest_enable">
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+
+    <!--<string-array name="country_flags">-->
+    <!--<item>@drawable/kr</item>-->
+    <!--<item>@drawable/us</item>-->
+    <!--<item>@drawable/de</item>-->
+    <!--<item>@drawable/fr</item>-->
+    <!--<item>@drawable/nl</item>-->
+    <!--<item>@drawable/cn</item>-->
+    <!--<item>@drawable/jp</item>-->
+    <!--<item>@drawable/vn</item>-->
+    <!--</string-array>-->
+
+    <string name="dialog_default_title">Here\'s a message!</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="LOADING">Loading...</string>
+
+
+    <string name="copyright">\n\nCopyright© 2016-2018 FATOS Co., Ltd.\nAll rights reserved.</string>
+    <string name="swipemenulistviewApp_name">ExpandableLayout</string>
+    <string name="string_km">km</string>
+    <string name="string_mi">mile</string>
+
+    <string name="string_speed_km">km/h</string>
+    <string name="string_speed_mi">mi/h</string>
+
+    <string name="dist_voice_km"> kilometer </string>
+    <string name="dist_voice_m"> meter </string>
+    <string name="dist_voice_mile"> mile </string>
+    <string name="dist_voice_feet"> feet </string>
+
+    <string name="dist_voice_km_ja"> キロメートル </string>
+    <string name="dist_voice_m_ja"> メーター </string>
+    <string name="dist_voice_mile_ja"> マイル </string>
+    <string name="dist_voice_feet_ja"> フィート </string>
+
+    <string name="dist_voice_km_ve"> cây số </string>
+    <string name="dist_voice_m_ve"> mét </string>
+    <string name="dist_voice_mile_ve"> dặm </string>
+    <string name="dist_voice_feet_ve"> ft </string>
+
+    <string name="dist_voice_km_zh"> 公里 </string>
+    <string name="dist_voice_m_zh"> 米 </string>
+    <string name="dist_voice_mile_zh"> 英里 </string>
+    <string name="dist_voice_feet_zh"> 脚 </string>
+
+
+    <string name="force_update"> An update is required. Go to Google Play Store? </string>
+
+    <string name="engine_init_failed_localdb">We can not find the file \nI need to run.\nPlease contact your vendor.</string>
+    <string name="engine_init_failed_title"> Navi Engine Init</string>
+    <string name="engine_init_failed_etc">Could not initialize Navi Engine.\nPlease contact your vendor.</string>
+    <string name="engine_init_failed_expiration_inside">Your subscription has expired.</string>
+    <string name="engine_init_failed_expiration_commercial">The default usage time has expired\nIf you want to extend it, please\ncontact the place of purchase</string>
+
+    <string name="fmp_txt_hybrid_searchdb_error">There is no Local DB\nLocal DB update is required.</string>
+    <string name="fmp_txt_hybridmode_searchdb_error">It is not communicable but it is\nswitched to Local Mode,\nbut there is no DB File.</string>
+
+    <string name="fmp_txt_route_msg"> is navigating to its destination..</string>
+    <string name="fmp_txt_route_msg_errorcode">Start Position and destination are too close.</string>
+    <string name="fmp_txt_route_edit_msg_errorcode">The same point is continuous or Start Position and destination are too close.</string>
+
+    <string name="fmp_txt_setting_route_option_1">Recommendation</string>
+    <string name="fmp_txt_setting_route_option_2">Recommendation 2</string>
+    <string name="fmp_txt_setting_route_option_3">Expressway</string>
+    <string name="fmp_txt_setting_route_option_4">General road</string>
+    <string name="fmp_txt_setting_route_option_5">Shortest dist.</string>
+    <string name="fmp_txt_setting_route_option_6">Free road first</string>
+
+    <string name="fmp_txt_setting_route_option_summary_1">Recommend</string>
+    <string name="fmp_txt_setting_route_option_summary_2">Opt.2</string>
+    <string name="fmp_txt_setting_route_option_summary_3">Exp.way</string>
+    <string name="fmp_txt_setting_route_option_summary_4">General</string>
+    <string name="fmp_txt_setting_route_option_summary_5">Shortest</string>
+    <string name="fmp_txt_setting_route_option_summary_6">Free</string>
+
+    <string-array name="lgd_search_name">
+        <item>P7 지상</item>
+        <item>P8 지상</item>
+        <item>P9 지상</item>
+        <item>모듈 지상</item>
+        <item>UT1</item>
+        <item>UT2</item>
+        <item>A1</item>
+        <item>A2</item>
+        <item>RND</item>
+        <item>Green동</item>
+        <item>Guest House</item>
+        <item>P7 지하</item>
+        <item>P8 지하2층</item>
+        <item>P9 지하</item>
+        <item>모듈 지하</item>
+        <item>제품창고</item>
+        <item>P8 지하4층</item>
+    </string-array>
+
+    <string-array name="lgd_search_floor">
+        <item>1F</item>
+        <item>1F</item>
+        <item>1F</item>
+        <item>1F</item>
+        <item>1F</item>
+        <item>1F</item>
+        <item>1F</item>
+        <item>1F</item>
+        <item>1F</item>
+        <item>1F</item>
+        <item>1F</item>
+        <item>B2F</item>
+        <item>B2F</item>
+        <item>B2F</item>
+        <item>B2F</item>
+        <item>B2F</item>
+        <item>B4F</item>
+    </string-array>
+
+    <string-array name="lgd_search_lon">
+        <item>126.772659</item>
+        <item>126.774826</item>
+        <item>126.764986</item>
+        <item>126.767723</item>
+        <item>126.769133</item>
+        <item>126.766255</item>
+        <item>126.770909</item>
+        <item>126.766273</item>
+        <item>126.770119</item>
+        <item>126.759112</item>
+        <item>126.768382</item>
+        <item>126.770232</item>
+        <item>126.774292</item>
+        <item>126.76641</item>
+        <item>126.76733</item>
+        <item>126.763773</item>
+        <item>126.774528</item>
+    </string-array>
+
+    <string-array name="lgd_search_lat">
+        <item>37.812084</item>
+        <item>37.810742</item>
+        <item>37.811786</item>
+        <item>37.809287</item>
+        <item>37.810863</item>
+        <item>37.81115</item>
+        <item>37.810411</item>
+        <item>37.809955</item>
+        <item>37.809172</item>
+        <item>37.815023</item>
+        <item>37.806486</item>
+        <item>37.811183</item>
+        <item>37.811225</item>
+        <item>37.810837</item>
+        <item>37.811089</item>
+        <item>37.812593</item>
+        <item>37.808559</item>
+    </string-array>
+
+
+    <string-array name="lgd_gate_name">
+        <item>Gate A</item>
+        <item>Gate B</item>
+        <item>Gate C</item>
+        <item>Gate D</item>
+    </string-array>
+
+    <string-array name="lgd_gate_floor">
+        <item>1F</item>
+        <item>1F</item>
+        <item>1F</item>
+        <item>1F</item>
+    </string-array>
+
+    <string-array name="lgd_gate_lon">
+        <item>126.765561</item>
+        <item>126.76841</item>
+        <item>126.774506</item>
+        <item>126.768118</item>
+    </string-array>
+
+    <string-array name="lgd_gate_lat">
+        <item>37.807109</item>
+        <item>37.806259</item>
+        <item>37.808039</item>
+        <item>37.812225</item>
+    </string-array>
+    <string name="fmp_txt_input_destination">Please enter your destination.</string>
+    <string name="fmp_title_view_details">View details</string>
+    <string name="fmp_title_view_map">View map</string>
+    <string name="string_nightmode">Map color</string>
+    <string name="string_routeedit">Edit route</string>
+    <string name="fmp_txt_current_location">Current location</string>
+    <string name="fmp_txt_goal_not_register">Please select your destination.</string>
+    <string name="fmp_txt_route_result_title">Route searching</string>
+    <string name="fmp_txt_waypoint_summary_count">%1$d other destinations</string>
+
+    <string name="fmp_txt_sort_dist">Dist</string>
+    <string name="fmp_txt_sort_date">Date</string>
+    <string name="fmp_txt_sort_order_han">Abc</string>
+    <string name="fmp_txt_sort_order_frequency">Freq</string>
+    <string name="fmp_txt_sort_order_accuracy">Acc</string>
+
+    <string name="fmp_txt_setting_route_option">Basic route option</string>
+
+    <string name="fmp_title_here_map">Here Map</string>
+    <string name="fmp_txt_restart_alert">You need to restart the app. Do you want to apply?</string>
+    <string name="fmp_title_naver_map">Naver Map</string>
+    <string name="fmp_title_tmap_api">TMap API</string>
+    <string name="fmp_title_fatos_api">Fatos API</string>
+    <string name="fmp_title_google_map">Google Map</string>
+    <string name="string_cancel">Cancel</string>
+    <string name="fmp_txt_go_next_goal">Next dest.</string>
+    <string name="string_select">Select</string>
+    <string name="string_roaddb">Road data</string>
+    <string name="warning_opt_route_least">At least %1$d routes are provided.</string>
+    <string name="warning_opt_route_upto">Up to %1$d routes are provided.</string>
+</resources>
+
