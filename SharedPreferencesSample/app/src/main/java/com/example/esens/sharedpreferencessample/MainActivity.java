@@ -2,12 +2,19 @@ package com.example.esens.sharedpreferencessample;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.RingtonePreference;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,12 +38,35 @@ public class MainActivity extends AppCompatActivity {
         prefs = getSharedPreferences("com.example.esens.sharedpreferencessample", MODE_PRIVATE);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
+        prefs.registerOnSharedPreferenceChangeListener(new SharedPreferences.OnSharedPreferenceChangeListener() {
+            @Override
+            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                Log.d(TAG,"onSharedPreference changed! key is " + key);
+                //notify();
+            }
+        });
+
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("Country", "Korea");
+        editor.apply();
+
+
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(!prefs.getString("Country","").equals("Korea")){
+                    //SharedPreferences.Editor editor = getSharedPreferences("com.example.esens.sharedpreferencessample", MODE_PRIVATE).edit();
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("Country", "Korea");
+                    editor.apply();
+                }else{
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("Country", "Thailand");
+                    editor.apply();
+                }
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
@@ -79,5 +109,6 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);  //액션바 상단에 홈 버튼(<-) 추가
         }else Log.e(TAG,"ActionBar is null");
     }
+
 
 }
