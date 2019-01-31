@@ -18,13 +18,14 @@ import com.example.esens.observablesample.inteface.Subject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ObserverFragment extends Fragment implements Subject , View.OnClickListener {
+public class ObserverFragment extends Fragment implements Subject{
 
 
     private ArrayList<Observer> observers;
     private ToggleButton button;
     private final static String TAG = "ESENS::" + ObserverFragment.class.getSimpleName();
 
+/*
     @Override
     public void onClick(View v) {
         switch(v.getId()){
@@ -33,13 +34,14 @@ public class ObserverFragment extends Fragment implements Subject , View.OnClick
                 break;
         }
     }
+*/
 
 
     public ObserverFragment() {
         observers = new ArrayList<>();
     }
 
-
+/*
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -47,13 +49,13 @@ public class ObserverFragment extends Fragment implements Subject , View.OnClick
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
 
         return view;
-    }
+    }*/
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        LinearLayout ll_item = (LinearLayout) view.findViewById(R.id.list_item);
+        /*LinearLayout ll_item = (LinearLayout) view.findViewById(R.id.list_item);
 
-        ll_item.setOnClickListener(this);
+        ll_item.setOnClickListener(this);*/
 
 
     }

@@ -30,12 +30,6 @@ public class itemFragment extends ObserverFragment implements Observer{
     @Override
     public void update(boolean checked) {
         Log.d(TAG,"itemFragment checked! " + checked);
-        if(checked){
-            item_tv.setText("checked!");
-
-        }else{
-            item_tv.setText("UnChecked!");
-        }
     }
 
     public itemFragment() {
@@ -61,7 +55,6 @@ public class itemFragment extends ObserverFragment implements Observer{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
-        item_tv = (TextView)view.findViewById(R.id.item_tv);
 
         // Set the adapter
         if (view instanceof RecyclerView) {

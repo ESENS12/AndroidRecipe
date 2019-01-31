@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements itemFragment.OnLi
     @Override
     public void onListFragmentInteraction(DummyContent.DummyItem item) {
         //Log.d(TAG,"item :" + item.toString());
-        final String stringItem = item.toString();
+        final String stringItem = item.content;
         observerFragment.notifyObservers();
 
     }
@@ -33,13 +33,14 @@ public class MainActivity extends AppCompatActivity implements itemFragment.OnLi
         FragmentManager manager = getSupportFragmentManager();
         Fragment itemfragment = new itemFragment();
 
-        manager.beginTransaction().replace(R.id.container,itemfragment).commit();
         observerFragment = new ObserverFragment();
 
         //// TODO: 2019. 1. 31. 강제로 casting해도 문제없는지?
 
         observerFragment.register((Observer)itemfragment);
         observerFragment.register(new SecondFragment());
+
+        manager.beginTransaction().replace(R.id.container,itemfragment).commit();
 
     }
 }
