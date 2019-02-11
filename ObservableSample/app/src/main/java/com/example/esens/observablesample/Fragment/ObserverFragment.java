@@ -25,39 +25,15 @@ public class ObserverFragment extends Fragment implements Subject{
     private ToggleButton button;
     private final static String TAG = "ESENS::" + ObserverFragment.class.getSimpleName();
 
-/*
-    @Override
-    public void onClick(View v) {
-        switch(v.getId()){
-            case(R.id.list_item):
-                Log.d(TAG,"item click! ");
-                break;
-        }
-    }
-*/
-
 
     public ObserverFragment() {
         observers = new ArrayList<>();
     }
 
-/*
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_item_list, container, false);
-
-        return view;
-    }*/
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        /*LinearLayout ll_item = (LinearLayout) view.findViewById(R.id.list_item);
-
-        ll_item.setOnClickListener(this);*/
-
-
+        super.onViewCreated(view,savedInstanceState);
     }
 
 

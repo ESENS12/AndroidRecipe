@@ -16,15 +16,15 @@ import rx.Observable;
 public class MainActivity extends AppCompatActivity implements itemFragment.OnListFragmentInteractionListener {
     public Observable<String> simpleObservable;
     private ObserverFragment observerFragment;
+    private static final String TAG = "ESNES::"+MainActivity.class.getSimpleName();
+
     @Override
     public void onListFragmentInteraction(DummyContent.DummyItem item) {
-        //Log.d(TAG,"item :" + item.toString());
         final String stringItem = item.content;
         observerFragment.notifyObservers();
 
     }
 
-    private static final String TAG = "ESNES::"+MainActivity.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,9 +34,6 @@ public class MainActivity extends AppCompatActivity implements itemFragment.OnLi
         Fragment itemfragment = new itemFragment();
 
         observerFragment = new ObserverFragment();
-
-        //// TODO: 2019. 1. 31. 강제로 casting해도 문제없는지?
-
         observerFragment.register((Observer)itemfragment);
         observerFragment.register(new SecondFragment());
 
