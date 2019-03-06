@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+<TextView
+    android:id="@+id/tvThumb"
+    android:layout_marginTop="100dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="0"
+    android:layout_margin="5dp"
+    android:visibility="visible"
+    android:layout_alignStart="@+id/seekBar_luminosite"
+    />
+
 <SeekBar xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/seekBar_luminosite"
     android:splitTrack="false"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:progress="0"
+    android:max="200"
+    android:layout_marginTop="40dp"
     android:progressDrawable="@drawable/seekbar_style"
     android:thumb="@drawable/custom_thumb"
     />
+
+</merge>
