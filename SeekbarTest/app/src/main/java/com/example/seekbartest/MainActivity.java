@@ -19,8 +19,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 int val = (progress * (seekBar.getWidth() - 2 * seekBar.getThumbOffset())) / seekBar.getMax();
+
                 tv.setText("" + progress);
-                tv.setX(seekBar.getX() + val + seekBar.getThumbOffset() / 2);
+
+                int padding= seekBar.getPaddingLeft() + seekBar.getPaddingRight();
+                int sPos = seekBar.getLeft() + seekBar.getPaddingLeft();
+                int xPos = (seekBar.getWidth()-padding) * seekBar.getProgress() / seekBar.getMax() + sPos - (tv.getWidth()/2);
+
+                tv.setX(xPos);
             }
 
             @Override
