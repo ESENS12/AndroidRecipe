@@ -23,7 +23,7 @@
         android:text="btn1"
         app:layout_constrainedHeight="true"
         app:layout_constrainedWidth="true"
-        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintRight_toLeftOf="@+id/btn2" />
 
     <Button
@@ -33,9 +33,17 @@
         android:text="btn2"
         app:layout_constrainedHeight="true"
         app:layout_constrainedWidth="true"
-        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toLeftOf="@+id/tv_helloworld"
         app:layout_constraintLeft_toRightOf="@+id/tv_helloworld" />
+
+    <android.support.constraint.Barrier
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/barrier"
+        app:barrierDirection="start"
+        app:constraint_referenced_ids="btn1,btn2"
+        />
 
     <Button
         android:id="@+id/btn3"
@@ -44,6 +52,6 @@
         android:text="btn3"
         app:layout_constrainedHeight="true"
         app:layout_constrainedWidth="true"
-        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toRightOf="@+id/btn2" />
 </android.support.constraint.ConstraintLayout>
