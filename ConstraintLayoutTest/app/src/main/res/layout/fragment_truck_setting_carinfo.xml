@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="0dip"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30.00"
+            android:background="@color/fmp_setting_background_color"
+            android:orientation="vertical"
+            android:weightSum="7.991">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4.5"
+                android:layout_marginLeft="28dp"
+                android:layout_marginRight="28dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="10"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.177"/>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="7.648">
+
+                        <TextView
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center_vertical"
+                            android:ellipsize="end"
+                            android:text="차종"
+                            android:textColor="@color/fmp_list_poitext_color"
+                            android:textSize="@dimen/truck_25dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="5"
+                            android:weightSum="10"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="5"
+                                android:gravity="center"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="@dimen/truck_100dp"
+                                    android:layout_height="26dp"
+                                    android:layout_gravity="left"
+                                    android:src="@drawable/m_s_setting_car_hipass_logo" />
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dip"
+                                        android:layout_marginLeft="2dp"
+                                        android:layout_gravity="left"
+                                        android:background="@drawable/m_s_setting_car_hipass_box"
+                                        >
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:textAlignment="center"
+                                            android:layout_marginTop="6dip"
+                                            android:layout_marginBottom="6dip"
+                                            android:layout_marginLeft="6dip"
+                                            android:layout_marginRight="6dip"
+                                            android:layout_gravity="center"
+                                            android:text="전용도로안내"
+                                            android:textColor="#ffffff"
+                                            android:textSize="@dimen/truck_17dp"
+                                            />
+                                    </LinearLayout>
+                            </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_weight="5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:id="@+id/truck_img_hipass"
+                                android:layout_marginLeft="@dimen/truck_8dp"
+                                android:layout_width="@dimen/truck_35dp"
+                                android:layout_height="@dimen/truck_35dp"
+                                android:layout_gravity="center"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/m_s_setting_check_nor" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center|center_vertical"
+                android:background="@color/fmp_list_divider_color"
+                android:gravity="center|center_vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4.9925"
+                android:layout_marginLeft="28dp"
+                android:layout_marginRight="28dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="@dimen/truck_45dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:textColor="#ffffff"
+                    android:text="유종"
+                    android:textSize="@dimen/truck_25dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/truck_tbt_parent_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70.00"
+            android:orientation="vertical"
+            android:background="@color/fmp_setting_background_color"
+            android:weightSum="7.991">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4.5"
+                android:weightSum="10"
+                android:paddingRight="28dp">
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="wrap_content"
+                    android:layout_alignBottom="@+id/layout_vehicle_type"
+                    android:layout_alignTop="@+id/layout_vehicle_type"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/shape_round_rectangle_darkgrey" />
+
+                <LinearLayout
+                    android:id="@+id/layout_vehicle_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:weightSum="2"
+                    android:layout_gravity="top"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/truck_setting_carinfo_1"
+                            android:layout_width="0dp"
+                            android:layout_height="96dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/m_s_setting_button1_nor"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="carinfo1"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/truck_22dp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/truck_setting_carinfo_2"
+                            android:layout_width="0dp"
+                            android:layout_height="96dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/m_s_setting_button1_nor"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical|center_horizontal"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="carinfo2"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/truck_22dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center|center_vertical"
+                        android:background="@color/fmp_list_divider_color"
+                        android:gravity="center|center_vertical" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+
+                        <LinearLayout
+                            android:id="@+id/truck_setting_carinfo_3"
+                            android:layout_width="0dp"
+                            android:layout_height="96dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/m_s_setting_button1_nor"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="carinfo3"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/truck_22dp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/truck_setting_carinfo_4"
+                            android:layout_width="0dp"
+                            android:layout_height="96dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/m_s_setting_button1_nor"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="carinfo4"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/truck_22dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center|center_vertical"
+                android:background="@color/fmp_list_divider_color"
+                android:gravity="center|center_vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4.9925"
+                android:orientation="vertical"
+                android:paddingRight="28dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="168dp"
+                    android:orientation="vertical">
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="92dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/shape_round_rectangle_darkgrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/truck_setting_carinfo_oil_1"
+                            android:layout_width="0dp"
+                            android:layout_height="92dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:background="@drawable/m_s_setting_button1_nor"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical|center_horizontal"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="carinfooil_1"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/truck_22dp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/truck_setting_carinfo_oil_2"
+                            android:layout_width="0dp"
+                            android:layout_height="92dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:background="@drawable/m_s_setting_button1_nor"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="carinfooil_2"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/truck_22dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/truck_layout_setting_carinfo_oil_eledetail"
+                    android:layout_width="434dp"
+                    android:layout_height="88dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:background="@drawable/selector_m_s_setting_button3"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:id="@+id/truck_img_eledetail"
+                        android:layout_width="46dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/selector_m_s_setting_icon_evsetting" />
+
+                    <TextView
+                        android:id="@+id/truck_txt_setting_carinfo_oil_eledetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|center_vertical"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="20dp"
+                        android:ellipsize="end"
+                        android:gravity="center|center_vertical"
+                        android:text="유종1"
+                        android:textColor="@color/selector_btn_color"
+                        android:textSize="@dimen/fmp_list_result_addr"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/truck_img_eledetail_arrow"
+                        android:layout_width="18dp"
+                        android:layout_height="34dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/selector_m_a_arrow" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

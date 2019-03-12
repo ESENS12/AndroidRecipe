@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="toll_bee_color">#2da2df</color>
+    <color name="fmp_speed_color">#2a2f38</color>
+    <color name="fmp_first_turn_color">#d3c092</color>
+    <color name="fmp_first_turn_unit_color">#cbb785</color>
+    <color name="fmp_second_turn_color">#cfd0d1</color>
+    <color name="fmp_second_turn_unit_color">#cfd0d1</color>
+    <color name="fmp_title_text_color">#ffffff</color>
+    <color name="fmp_input_title_text_color">#a8ff00</color>
+    <color name="fmp_input_serial_info_text_color">#fecea3</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="fmp_mainmenu_bottom_text_color_nor">#e1c283</color>
+    <color name="fmp_mainmenu_menulist_subname">#f4b666</color>
+    <color name="fmp_mainmenu_menulist_subname_sel">#ffae9f</color>
+
+
+    <color name="fmp_list_background_color">#2b2f38</color>
+    <color name="fmp_list_background_color_sel">#917c60</color>
+    <color name="fmp_list_addr_search_color_sel">#4a4d53</color>
+    <color name="fmp_list_divider_color">#4a4d53</color>
+
+    <color name="fmp_list_poitext_color">#ffffff</color>
+    <color name="fmp_list_addr_color">#cbb785</color>
+
+    <color name="fmp_topmenu_txtcolor">#f2d9aa</color>
+
+    <color name="fmp_routesummary_1">#ff5959</color>
+    <color name="fmp_routesummary_2">#b17442</color>
+    <color name="fmp_routesummary_3">#15b524</color>
+    <color name="fmp_routesummary_4">#6796ff</color>
+
+
+    <color name="fmp_setting_background_color">#2b2f38</color>
+    <color name="fmp_second_turnlist_color">#cfd0d1</color>
+    <color name="fmp_second_crosslist_color">#bebec0</color>
+
+
+    <color name="fmp_drive_popup_line">#484d59</color>
+
+    <color name="fmp_addrsearch_bunji">#ecad7a</color>
+    <color name="fmp_drive_level_txt_color">#1e1e1e</color>
+    <color name="fmp_mapmodeinfo">#f2d9aa</color>
+    <color name="fmp_laneview">#22262d</color>
+    <color name="fmp_lanedist">#43c8ff</color>
+
+    <color name="fmp_hipassview">#2da2df</color>
+    <color name="fmp_hipassviewbg">#35383d</color>
+
+    <color name="fatos_allsearch_sectionbar_color">#464a55</color>
+    <color name="hlinecolor_auto_tab">#f2d9aa</color>
+    <color name="hlinecolor_auto_select_tab">#f2d9aa</color>
+
+    <color name="fatos_tabselected_auto_color">#f2d9aa</color>
+    <color name="fatos_tabdeselected_autocolor">#ffffff</color>
+
+    <color name="fatos_route_edit_autocolor">#1c1d22</color>
+
+    <color name="truck_setting_SelectColor">#f2d9aa</color>
+    <color name="truck_setting_nonSelectColor">#ffffff</color>
+
 </resources>

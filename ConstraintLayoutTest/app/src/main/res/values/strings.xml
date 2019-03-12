@@ -1,3 +1,594 @@
-<resources>
-    <string name="app_name">ConstraintLayoutTest</string>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">FATOS auto</string>
+    <string name="app_name_truck">FATOS truck</string>
+    <string-array name="menu_names">
+        <item>통합검색</item>
+        <item>주소검색</item>
+        <item>주변검색</item>
+        <item>경로상POI검색</item>
+        <item>경로편집</item>
+        <item>경로정보</item>
+        <item>교통정보</item>
+        <item>유고정보</item>
+        <item>환경설정</item>
+    </string-array>
+
+    <string-array name="menu_sub_names">
+        <item>Search</item>
+        <item>Search ad</item>
+        <item>Search nearby</item>
+        <item>Search POI</item>
+        <item>Edit route</item>
+        <item>Route Info</item>
+        <item>Traffic Info</item>
+        <item>Incident Info</item>
+        <item>Settings</item>
+    </string-array>
+    <!--<item>유고정보</item>-->
+    <!--<string-array name="menu_names_part1">-->
+    <!--<item>통합검색</item>-->
+    <!--<item>주소검색</item>-->
+    <!--<item>주변검색</item>-->
+    <!--<item>경로상POI검색</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="menu_names_part2">-->
+    <!--<item>경로편집</item>-->
+    <!--<item>경로정보</item>-->
+    <!--<item>교통정보</item>-->
+    <!--<item>환경설정</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="menu_sub_names_part1">-->
+    <!--<item>Search</item>-->
+    <!--<item>Address search</item>-->
+    <!--<item>Search around</item>-->
+    <!--<item>Search for route poi</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="menu_sub_names_part2">-->
+    <!--<item>Edit route</item>-->
+    <!--<item>Route details</item>-->
+    <!--<item>Traffic Information</item>-->
+    <!--<item>Setting</item>-->
+    <!--</string-array>-->
+
+    <string-array name="menu_names_part1">
+        <item>Unified search</item>
+        <item>Address search</item>
+        <item>Nearby search</item>
+        <item>Settings</item>
+    </string-array>
+    <string-array name="menu_names_part2">
+        <item>Route details</item>
+        <item>Edit waypoints</item>
+        <item>Bluetooth</item>
+    </string-array>
+
+    <string-array name="menu_names_part3">
+        <item>경로정보</item>
+        <item>경로취소</item>
+        <item>수동재탐색</item>
+        <item>환경설정</item>
+    </string-array>
+    <!--<item>경로편집</item>-->
+    <!--<item>Incident Information</item>-->
+    <string-array name="menu_sub_names_part1">
+        <item>Unified search</item>
+        <item>Address search</item>
+        <item>Nearby search</item>
+        <item>Settings</item>
+    </string-array>
+    <string-array name="menu_sub_names_part2">
+        <item>Route details</item>
+        <item>Edit waypoints</item>
+        <item>Bluetooth connectivity</item>
+    </string-array>
+    <!--<item>Edit route</item>-->
+
+    <string-array name="menu_sub_names_part3">
+        <item>Route details</item>
+        <item>Route Cancel</item>
+        <item>Reroute</item>
+        <item>Settings</item>
+    </string-array>
+
+
+    <string-array name="fmp_setting_names">
+        <item>General</item>
+        <item>System</item>
+        <item>Map</item>
+        <item>Update map</item>
+        <item>Guidance</item>
+        <item>Vehicle</item>
+        <item>Route planning</item>
+        <item>Reset to defaults</item>
+    </string-array>
+
+    <string-array name="fmp_setting_names2">
+        <item>TMSDG_차량정보</item>
+        <item>시스템정보</item>
+        <item>지도</item>
+        <item>지도업데이트</item>
+    </string-array>
+
+
+    <string-array name="menu_cate_part1">
+        <item>Etc</item>
+        <item>OIL</item>
+        <item>GAS</item>
+        <item>EV</item>
+        <item>RESTAURANT</item>
+        <item>MART</item>
+        <item>PARKING</item>
+        <item>AUTOMECHANIC</item>
+        <item>BANK/ATM</item>
+        <item>HOSPITAL</item>
+        <item>TRAFFIC</item>
+        <item>SHOPPING</item>
+        <item>STAY</item>
+        <item>SIGHTSEEING</item>
+    </string-array>
+
+    <string name="fmp_txt_go_firstmap">Map</string>
+    <string name="fmp_txt_go_menu">Menu</string>
+    <string name="fmp_txt_go_menu_upper">MENU</string>
+    <string name="fmp_txt_allsearch">Search</string>
+    <string name="fmp_txt_addrsearch">Address search</string>
+    <string name="fmp_txt_recent">Recent search</string>
+    <string name="fmp_txt_favorite">Favorites</string>
+    <string name="fmp_txt_favorite_home">Home</string>
+    <string name="fmp_txt_favorite_company">Office</string>
+    <string name="fmp_txt_please_register">Please register</string>
+    <string name="fmp_txt_unable_register">Unable to register</string>
+    <string name="fmp_txt_myhome_not_register">My house is not set.</string>
+    <string name="fmp_txt_office_not_register">Office is not set.</string>
+    <string name="fmp_txt_goal_not_register">Please select your destination.</string>
+    <string name="fmp_txt_myhome_register">My house is registered</string>
+    <string name="fmp_txt_office_register">Office is registered</string>
+    <string name="fmp_txt_invaild_point">Invalid property</string>
+    <string name="fmp_txt_myhome_delete">My house deleted</string>
+    <string name="fmp_txt_office_delete">Office deleted</string>
+    <string name="fmp_txt_home_office_error_msg">There is no registered favorites. You can register only in your favorites.</string>
+    <string name="fmp_txt_route_msg"> is navigating to its destination..</string>
+    <string name="fmp_txt_route_msg_errorcode">Start Position and destination are too close.</string>
+    <string name="fmp_txt_route_edit_msg_errorcode">The same point is continuous or Start Position and destination are too close.</string>
+    <string name="fmp_txt_home_office_complete">Cancel</string>
+    <string name="fmp_txt_search_center_msg">is searching the center..</string>
+    <string name="fmp_txt_sort">Sort</string>
+    <string name="fmp_txt_sort_dist">Dist</string>
+    <string name="fmp_txt_sort_date">Date</string>
+    <string name="fmp_txt_sort_order_han">Abc</string>
+    <string name="fmp_txt_sort_order_frequency">Freq</string>
+    <string name="fmp_txt_sort_order_accuracy">Acc</string>
+    <string name="fmp_txt_newaddr">Road name address</string>
+    <string name="fmp_txt_jibun">Lot number</string>
+    <string name="fmp_txt_inputname">Enter your search terms</string>
+    <string name="fmp_txt_norecent">There is no recent destination</string>
+    <string name="fmp_txt_nofavorite">There is no favorite destination</string>
+    <string name="fmp_txt_route">Route</string>
+    <string name="fmp_txt_add_home_favorite">Home registration</string>
+    <string name="fmp_txt_add_company_favorite">Office registration</string>
+    <string name="fmp_txt_route_edit">Edit waypoints</string>
+    <string name="fmp_txt_route_rename">Rename</string>
+    <string name="fmp_txt_route_rename_home_favorite">Rename home</string>
+    <string name="fmp_txt_route_rename_company_favorite">Rename office</string>
+    <string name="fmp_txt_addfavorite">Favorites</string>
+    <string name="fmp_txt_more">More</string>
+    <string name="fmp_txt_delete_recent">Delete</string>
+    <string name="fmp_txt_route_info">Route details</string>
+    <string name="fmp_txt_start_rg">Go</string>
+    <string name="fmp_txt_route_simul">Simulated</string>
+    <string name="fmp_img_route_detail">Detailed</string>
+    <string name="fmp_img_route_all">Summary</string>
+    <string name="fmp_txt_my_house">Home</string>
+    <string name="fmp_txt_my_company">Office</string>
+    <string name="fmp_txt_my_recent">Recent search</string>
+
+    <string name="fmp_txt_routecancel">Cancel route</string>
+    <string name="fmp_txt_reroute">Recalculate route</string>
+
+    <string name="fmp_txt_setting">Settings</string>
+    <string name="fmp_txt_systemsetting">System Setting</string>
+    <string name="fmp_txt_cate">Search Nearby</string>
+    <string name="fmp_txt_setting_navigation">Map Settings</string>
+    <string name="fmp_txt_setting_common">General Settings</string>
+    <string name="fmp_txt_setting_rg">Guidance Settings</string>
+    <string name="fmp_txt_setting_systeminfo">System Info.</string>
+    <string name="fmp_txt_setting_clause">Clause</string>
+    <string name="fmp_txt_setting_copyright">Copyright</string>
+    <string name="fmp_txt_setting_mapupdate">Update map Settings</string>
+    <string name="fmp_txt_setting_route">Route planning Settings</string>
+    <string name="fmp_txt_setting_carinfo">Vehicle information Settings</string>
+
+
+    <string name="fmp_txt_setting_navigation_mapcolor">Map themes</string>
+    <string name="fmp_txt_setting_navigation_mapcolor_explain"></string>
+
+    <string name="fmp_txt_setting_navigation_routelinecolor">Route color</string>
+    <string name="fmp_txt_setting_navigation_routelinecolor_explain"></string>
+
+    <string name="fmp_txt_setting_navigation_mapmode">Use dynamic map mode</string>
+    <string name="fmp_txt_setting_navigation_mapmode_explain"></string>
+
+    <string name="fmp_txt_setting_navigation_carimage">Car icon style</string>
+    <string name="fmp_txt_setting_navigation_carimage_explain"></string>
+
+    <string name="fmp_txt_setting_day">Day</string>
+    <string name="fmp_txt_setting_night">Night</string>
+    <string name="fmp_txt_setting_daynight_auto">Auto</string>
+
+    <string name="fmp_txt_setting_mapviewmode_2d">2D</string>
+    <string name="fmp_txt_setting_mapviewmode_3d">3D</string>
+    <string name="fmp_txt_setting_mapviewmode_auto">Auto</string>
+
+    <string name="fmp_txt_setting_autodrive_on">On</string>
+    <string name="fmp_txt_setting_autodrive_off">Off</string>
+
+    <string name="fmp_txt_setting_rg_language">Language</string>
+    <string name="fmp_txt_setting_rg_language_explain"></string>
+
+    <string name="fmp_txt_setting_rg_distunit">Distance unit</string>
+    <string name="fmp_txt_setting_rg_distunit_explain"></string>
+
+    <string name="fmp_txt_setting_rg_speedunit">Speed unit</string>
+    <string name="fmp_txt_setting_rg_speedunit_explain"></string>
+
+    <string name="fmp_txt_setting_rg_routeedit">Edit route</string>
+    <string name="fmp_txt_setting_rg_routeedit_explain"></string>
+
+    <string name="fmp_txt_setting_dem_onoff">DEM</string>
+    <string name="fmp_txt_setting_dem_onoff_explain"></string>
+
+    <string name="fmp_txt_setting_simulgps_onoff">Simul GPS</string>
+    <string name="fmp_txt_setting_simulgps_onoff_explain"></string>
+
+    <string name="fmp_txt_setting_drawgps_onoff">Draw GPS Point</string>
+    <string name="fmp_txt_setting_drawgps_onoff_explain"></string>
+
+    <string name="fmp_txt_setting_routelinecut_onoff">Path cut</string>
+    <string name="fmp_txt_setting_routelinecut_explain"></string>
+
+    <string name="fmp_txt_setting_rg_camera">Guidance items</string>
+    <string name="fmp_txt_setting_rg_camera_explain"></string>
+
+    <string name="fmp_txt_setting_automata_type">Input method</string>
+    <string name="fmp_txt_setting_automata_type_explain"></string>
+
+    <string name="fmp_txt_setting_language_1">한국어</string>
+    <string name="fmp_txt_setting_language_2">English</string>
+    <string name="fmp_txt_setting_language_3">中文(简体)</string>
+    <string name="fmp_txt_setting_language_4">Tiếng Việt</string>
+
+
+    <string name="fmp_txt_setting_distunit_1">km</string>
+    <string name="fmp_txt_setting_distunit_1_meter">m</string>
+    <string name="fmp_txt_setting_distunit_2">mile</string>
+    <string name="fmp_txt_setting_distunit_2_feet">ft</string>
+
+    <string name="fmp_txt_setting_speedunit_1">km/h</string>
+    <string name="fmp_txt_setting_speedunit_2">mph</string>
+
+    <string name="fmp_txt_setting_automata_1">Chunjiin</string>
+    <string name="fmp_txt_setting_automata_2">Naratgul</string>
+
+    <string name="fmp_txt_setting_routeedit_1">ON</string>
+    <string name="fmp_txt_setting_routeedit_2">OFF</string>
+
+    <string name="fmp_txt_setting_dem_1">ON</string>
+    <string name="fmp_txt_setting_dem_2">OFF</string>
+
+    <string name="fmp_txt_setting_drawgps_1">ON</string>
+    <string name="fmp_txt_setting_drawgps_2">OFF</string>
+
+    <string name="fmp_txt_setting_camera_title">Speed alert</string>
+    <string name="fmp_txt_setting_camera_explain"></string>
+
+    <string name="fmp_txt_setting_camera2_title">Drive carefully</string>
+    <string name="fmp_txt_setting_camera2_explain"></string>
+
+    <string name="fmp_txt_setting_camera3_title">Facility</string>
+    <string name="fmp_txt_setting_camera3_explain"></string>
+
+
+    <string name="fmp_txt_setting_camera_1">Fixed cam</string>
+    <string name="fmp_txt_setting_camera_2">Mobile cam</string>
+    <string name="fmp_txt_setting_camera_3">Signal control section</string>
+    <string name="fmp_txt_setting_camera_4">Intervention control</string>
+    <string name="fmp_txt_setting_camera_5">Parking control</string>
+    <string name="fmp_txt_setting_camera_6">Bus lane</string>
+    <string name="fmp_txt_setting_camera_7">Sharp curve</string>
+    <string name="fmp_txt_setting_camera_8">Child protection zone</string>
+    <string name="fmp_txt_setting_camera_9">Accident hazard</string>
+    <string name="fmp_txt_setting_camera_10">Speed bump</string>
+    <string name="fmp_txt_setting_camera_11">Traffic info. Collection</string>
+    <string name="fmp_txt_setting_camera_12">Toll gate</string>
+    <string name="fmp_txt_setting_camera_13">Resting place</string>
+
+    <string name="fmp_txt_setting_route_option">Route planning option</string>
+    <string name="fmp_txt_setting_route_option_explain"></string>
+    <string name="fmp_txt_setting_reroute_option">Auto-reroute period</string>
+    <string name="fmp_txt_setting_reroute_option_explain"></string>
+    <string name="fmp_txt_setting_routecomm_option">Route direction</string>
+    <string name="fmp_txt_setting_routecomm_option_explain"></string>
+    <string name="fmp_txt_setting_via_dir_option">Waypoint direction</string>
+    <string name="fmp_txt_setting_via_dir_option_explain"></string>
+
+    <string name="fmp_txt_setting_route_option_1">Recommended</string>
+    <string name="fmp_txt_setting_route_option_2">Recommended 2</string>
+    <string name="fmp_txt_setting_route_option_3">Expressway priority</string>
+    <string name="fmp_txt_setting_route_option_4">Free road first</string>
+    <string name="fmp_txt_setting_route_option_5">Shortest route</string>
+    <string name="fmp_txt_setting_route_option_6">Avoid toll roads</string>
+
+    <string name="fmp_txt_setting_route_option_summary_1">Recom</string>
+    <string name="fmp_txt_setting_route_option_summary_2">Opt.2</string>
+    <string name="fmp_txt_setting_route_option_summary_3">Exp.way</string>
+    <string name="fmp_txt_setting_route_option_summary_4">General</string>
+    <string name="fmp_txt_setting_route_option_summary_5">Shortest</string>
+    <string name="fmp_txt_setting_route_option_summary_6">Free</string>
+
+    <string name="fmp_txt_setting_reroute_option_1">5 min</string>
+    <string name="fmp_txt_setting_reroute_option_2">10 min</string>
+    <string name="fmp_txt_setting_reroute_option_3">15 min</string>
+
+    <string name="fmp_txt_setting_via_dir_option_1">Use</string>
+    <string name="fmp_txt_setting_via_dir_option_2">Not Use</string>
+
+    <string name="fmp_txt_setting_route_auto">Hybrid</string>
+    <string name="fmp_txt_setting_route_comm">Center</string>
+    <string name="fmp_txt_setting_route_local">Local</string>
+
+    <string name="fmp_txt_setting_carinfo_kindof">Vehicle type</string>
+    <string name="fmp_txt_setting_carinfo_kindof_explain"></string>
+    <string name="fmp_txt_setting_carinfo_oil">Fuel type</string>
+    <string name="fmp_txt_setting_carinfo_oil_explain"></string>
+    <string name="fmp_txt_setting_driver_position">Driver position</string>
+    <string name="fmp_txt_setting_driver_position_explain"></string>
+
+    <string name="fmp_txt_setting_carinfo_1">Compact</string>
+    <string name="fmp_txt_setting_carinfo_2">Passenger</string>
+    <string name="fmp_txt_setting_carinfo_3">SUV</string>
+    <string name="fmp_txt_setting_carinfo_4">MPV</string>
+    <string name="fmp_txt_setting_carinfo_5">Truck</string>
+    <string name="fmp_txt_setting_carinfo_6">Special equipment</string>
+
+    <string name="truck_setting_carinfo_1">화물자동차</string>
+    <string name="truck_setting_carinfo_2">건설기계</string>
+    <string name="truck_setting_carinfo_3">특수자동차</string>
+    <string name="truck_setting_carinfo_4">고압가스, 위험물 적재차량</string>
+    <string name="truck_setting_carinfo_oil_1">경유</string>
+    <string name="truck_setting_carinfo_oil_2">전기</string>
+
+
+    <string name="fmp_txt_setting_carinfo_oil_1">Gasoline</string>
+    <string name="fmp_txt_setting_carinfo_oil_2">Diesel</string>
+    <string name="fmp_txt_setting_carinfo_oil_3">LPG</string>
+    <string name="fmp_txt_setting_carinfo_oil_4">Electricity</string>
+
+    <string name="fmp_txt_setting_driver_info_1">Left handle drive</string>
+    <string name="fmp_txt_setting_driver_info_2">Right handle drive</string>
+
+    <string name="fmp_txt_setting_mapupdate_apk">FATOS auto APK</string>
+    <string name="fmp_txt_setting_mapupdate_apk_explain"></string>
+
+    <string name="fmp_txt_setting_mapupdate_basemap">Base map data</string>
+    <string name="fmp_txt_setting_mapupdate_basemap_explain"></string>
+
+    <string name="fmp_txt_setting_mapupdate_searchdb">POI search data</string>
+    <string name="fmp_txt_setting_mapupdate_searchdb_explain"></string>
+
+    <string name="fmp_txt_setting_mapupdate_roaddb">Road data</string>
+    <string name="fmp_txt_setting_mapupdate_roaddb_explain"></string>
+
+    <string name="fmp_txt_setting_mapupdate_ando">Safe-drive assistance data</string>
+    <string name="fmp_txt_setting_mapupdate_ando_explain"></string>
+
+    <string name="fmp_txt_setting_mapupdate_voice">Guide Voice data</string>
+
+    <string name="fmp_txt_setting_mapupdate_newversion">Latest version installed.</string>
+    <string name="fmp_txt_setting_mapupdate_needdownload">Update required</string>
+    <string name="fmp_txt_setting_mapupdate_non_info">There is no version info.</string>
+    <string name="fmp_txt_setting_mapupdate_newversion_update">update</string>
+
+    <string name="fmp_txt_setting_download_kor">app down->install</string>
+    <string name="fmp_txt_setting_update_kor">update</string>
+    <string name="fmp_txt_setting_allupdate_kor">Full update</string>
+    <string name="fmp_txt_setting_restart_kor">restart</string>
+    <string name="fmp_txt_setting_update_message">Please restart for download completion</string>
+    <string name="fmp_txt_setting_update_complete_message">When the download is complete, the installation process will proceed..</string>
+
+
+    <string name="fmp_txt_setting_systeminfo_serialnumber">Serial number</string>
+    <string name="fmp_txt_setting_systeminfo_appver">S/W version</string>
+    <string name="fmp_txt_setting_systeminfo_buildno">Build number</string>
+    <string name="fmp_txt_setting_systeminfo_basemapver">Base map data</string>
+    <string name="fmp_txt_setting_systeminfo_searchver">POI search data</string>
+    <string name="fmp_txt_setting_systeminfo_roadver">Road data</string>
+    <string name="fmp_txt_setting_systeminfo_andover">Safe-drive assistance data</string>
+
+    <string name="fmp_txt_addrsearch_bunji">+ House No</string>
+    <string name="fmp_txt_addrsearch_newaddr">+ Building No</string>
+    <string name="fmp_txt_addrsearch_san">San</string>
+
+    <string name="fmp_txt_addpoi_title_home">Home registration</string>
+    <string name="fmp_txt_addpoi_home">Would you like to registrate my home?</string>
+    <string name="fmp_txt_addpoi_home_error">Home is not registered.\nRegister via favorite menu</string>
+
+    <string name="fmp_txt_addpoi_title_company">Office registration</string>
+    <string name="fmp_txt_addpoi_company">Would you like to registrate your office?</string>
+    <string name="fmp_txt_addpoi_company_error">Office is not registrated.\nRegister via favorite menu</string>
+
+    <string name="fmp_txt_setting_init_title">Setting initialization</string>
+    <string name="fmp_txt_setting_init">Would you like to reset?</string>
+
+    <string name="fmp_txt_route_result_title">Route searching</string>
+    <string name="fmp_txt_route_result_contents">Would you like to reset?</string>
+
+    <string name="fmp_txt_route_summary_title">Route details</string>
+    <string name="fmp_txt_route_summary_contents">Route is not running.</string>
+
+    <string name="fmp_txt_allsearch_title">Search</string>
+    <string name="fmp_txt_allsearch_error">No data found.</string>
+
+
+    <string name="fmp_txt_serial_input_title1">Serial number</string>
+    <string name="fmp_txt_serial_input_title2">Enter</string>
+    <string name="fmp_txt_serial_input_title3">authorization</string>
+    <string name="fmp_txt_serial_input_error">Unauthorized serial number</string>
+    <string name="fmp_txt_serial_input_device">It is an unauthorized terminal.\nPlease contact the manufacturer.</string>
+    <string name="fmp_txt_serial_input_ok">Verified.</string>
+
+    <string name="fmp_txt_serial_input_info1">How to check the serial number</string>
+    <string name="fmp_txt_serial_input_info2">Check the serial number sticker included with the product.</string>
+    <string name="fmp_txt_serial_input_info3">Enter the serial number on the serial nulber sticker.</string>
+    <string name="fmp_txt_serial_input_info4">The serial number consists of uppercase letters and numbers</string>
+    <string name="fmp_txt_serial_input_info5">Enter the serial number and press OK.</string>
+    <string name="fmp_txt_serial_input_info6">Even if it is not authenticated, it can be used for 30 days.</string>
+    <string name="fmp_txt_serial_input_info7">If the authentication fails, please contact the place of purchase.</string>
+
+
+    <string name="fmp_txt_hybrid_searchdb_error">Map data is not installed.\nPlease install map data</string>
+    <string name="fmp_txt_hybridmode_searchdb_error">Map data is not installed and you \ncan not switch to local mode.\nPlease install map data</string>
+
+
+    <string name="fmp_txt_map_update_title">Map update</string>
+    <string name="fmp_txt_map_update_contents_disablenetwork">Map update must have Wi-Fi\nor mobile data connected.</string>
+    <string name="fmp_txt_map_update_contents_connect_lte">We recommend Wi-Fi connection for\nreliable map update.\nDo you want to proceed now?</string>
+    <string name="fmp_txt_map_update_contents_restartapp">Would you like to restart\n the app to update your date?</string>
+    <string name="fmp_txt_map_update_contents_downloading">You can not do anything\n else while downloading</string>
+
+    <string name="fmp_txt_map_update_error_contents1">No file to update</string>
+    <string name="fmp_txt_map_update_error_contents2">Canceled by user</string>
+    <string name="fmp_txt_map_update_error_contents3">Could not access\n to server.</string>
+    <string name="fmp_txt_map_update_error_contents4">Insufficient storage space.</string>
+    <string name="fmp_txt_map_update_error_contents5">Could not access to storage.</string>
+    <string name="fmp_txt_map_update_error_contents6">Update information is not match.</string>
+    <string name="fmp_txt_map_update_error_contents7">The communication status is not good.</string>
+
+    <string name="fmp_txt_map_update_cancel_download">Would you cancel the update?</string>
+    <string name="fmp_txt_map_update_cancel">Cancel</string>
+    <string name="fmp_txt_map_update_continue">Continue</string>
+    <string name="fmp_txt_map_update_complete">Complete</string>
+    <string name="fmp_txt_map_update_message">You can not restart an app while downloading</string>
+
+    <string name="fmp_string_alert">Alert</string>
+    <string name="fmp_string_language_change">Do you want to change the language\nsetting? Some screens may not be \ndisplayed in the set language</string>
+
+    <string name="fmp_txt_labtest">Lab</string>
+
+    <string name="fmp_txt_labtest_route">Path Route</string>
+    <string name="fmp_txt_labtest_route_explain">Online basis</string>
+
+    <string name="fmp_txt_labtest_search">POI Search</string>
+    <string name="fmp_txt_labtest_search_explain">Online basis</string>
+
+    <string name="fmp_txt_labtest_routesummary">Route Summary</string>
+    <string name="fmp_txt_labtest_routesummary_explain"></string>
+    <string name="fmp_txt_labtest_routesummary_1">Old</string>
+    <string name="fmp_txt_labtest_routesummary_2">New</string>
+
+    <string name="fmp_txt_labtest_route_1">T map API</string>
+    <string name="fmp_txt_labtest_route_2">T map Driect</string>
+    <string name="fmp_txt_labtest_route_3">FATOS API</string>
+    <string name="fmp_txt_labtest_route_4">FARM API</string>
+    <string name="fmp_txt_labtest_search_1">T map API</string>
+    <string name="fmp_txt_labtest_search_2">Google API</string>
+    <string name="fmp_txt_labtest_search_3">Naver API</string>
+
+    <string name="fmp_txt_system_setting_clause">Clause</string>
+    <string name="fmp_txt_system_setting_copyright">Copyright</string>
+
+    <string name="fmp_map_airmode_on">Air mode ON</string>
+    <string name="fmp_map_airmode_on_build_off">Air Building Off</string>
+    <string name="fmp_map_airmode_off">Air mode OFF</string>
+    <string name="fmp_map_airmode_on_road_off">Air Road Off</string>
+
+    <string name="fmp_map_routemode_hybrid">Hybrid Mode</string>
+    <string name="fmp_map_routemode_local">Local Mode</string>
+
+    <string name="fmp_map_airmode">Air</string>
+    <string name="fmp_map_mapmode_northup">NU</string>
+
+    <string name="fmp_route_summary_make_msg">Creating path summary data.</string>
+    <string name="fmp_route_summary_get_msg">Getting path info.</string>
+
+    <string name="fmp_route_remain_time_need">ETA</string>
+    <string name="fmp_route_error_default_msg">Path search failed.</string>
+    <string name="fmp_preferences_reset">Preferences have been reset.</string>
+
+    <string name="fmp_txt_bluetooth">Bluetooth</string>
+
+    <string name="fmp_txt_bluetooth_autoconnect">Automatic connection</string>
+    <string name="fmp_txt_bluetooth_autoconnect_explain"></string>
+
+    <string name="fmp_txt_bluetooth_pair_device">Connect device</string>
+    <string name="fmp_txt_bluetooth_pair_device_explain"></string>
+
+    <string name="fmp_txt_bluetooth_device">Registered device</string>
+    <string name="fmp_txt_bluetooth_scanning">Scanning for devices</string>
+
+    <string name="send">Send</string>
+    <string name="not_connected">You are not connected to a device</string>
+    <string name="bt_not_enabled_leaving">Bluetooth was not enabled.</string>
+    <string name="title_connecting">connecting...</string>
+    <string name="title_connected_to">connected to <xliff:g id="device_name">%1$s</xliff:g></string>
+    <string name="title_not_connected">not connected</string>
+
+    <string name="scanning">scanning for devices...</string>
+    <string name="select_device">select a device to connect</string>
+    <string name="none_paired">No devices have been paired</string>
+    <string name="none_found">No devices found</string>
+    <string name="title_paired_devices">Paired Devices</string>
+    <string name="title_other_devices">Other Available Devices</string>
+    <string name="button_scan">Scan for devices</string>
+
+    <string name="secure_connect">Connect a device - Secure</string>
+    <string name="insecure_connect">Connect a device - Insecure</string>
+    <string name="discoverable">Make discoverable</string>
+    <string name="addgoal">Add goal</string>
+
+    <string name="fmp_txt_ok">OK</string>
+    <string name="fmp_txt_cancal">Cancel</string>
+    <string name="fmp_txt_favorite_name_limit">Enter within 32 characters.</string>
+    <string name="fmp_txt_favorite_name_hint">Please enter a new name.</string>
+
+    <string name="fmp_txt_waypoint_summary_count">%1$d other destinations</string>
+    <string name="fmp_txt_current_location">Current Location</string>
+    <string name="fmp_txt_setting_camera4_explain"></string>
+    <string name="fmp_txt_setting_camera4_title">Guide type</string>
+    <string name="fmp_txt_setting_camera_14">Detail</string>
+    <string name="fmp_txt_setting_camera_15">Simple</string>
+    <string name="fmp_txt_warning_change_localmode">In local mode, aerial images of newly moving regions may not be displayed.</string>
+    <string name="fmp_txt_no_result">No search results were found</string>
+
+    <string name="fmp_txt_go_next_goal">Next dest.</string>
+    <string name="fmp_txt_ev_reachable">Reachable</string>
+    <string name="fmp_txt_ev_needcharge">Need Charging</string>
+
+    <string name="fmp_txt_setting_carinfo_oil_eledetail">electric car search options</string>
+    <string name="fmp_txt_setting_elec_searchbound">Search radius</string>
+    <string name="fmp_txt_setting_elec_searchbound_explain"></string>
+    <string name="fmp_txt_setting_elec_fee">Fee</string>
+    <string name="fmp_txt_setting_elec_fee_explain"></string>
+    <string name="fmp_txt_setting_elec_type">Charger type</string>
+    <string name="fmp_txt_setting_elec_type_explain"></string>
+    <string name="fmp_txt_setting_elec_business">Service Provider</string>
+    <string name="fmp_txt_setting_elec_business_explain"></string>
+    <string name="fmp_txt_setting_elec_speed">Chager speed</string>
+    <string name="fmp_txt_setting_elec_manufacturer">Car manufacturer</string>
+    <string name="fmp_txt_setting_elec_localgov">Local Gov.</string>
+
+    <string name="fmp_string_notsupport">The current model does not support changing the language setting.</string>
+    <string name="fmp_txt_setting_mapupdate_download_complete">Download completed</string>
+    <string name="fmp_txt_setting_update_waiting">Pending download...</string>
+
+    <string name="truck_agreement_title_1">FATOS truck 사용동의</string>
+    <string name="truck_agreement_title_2">위치정보이용동의</string>
+    <string name="truck_agreement_title_3">제3자 정보제공동의</string>
+
+    <string name="truck_agreement_optionable">(선택)</string>
+
+    <string name="truck_agreement_1">이 약관은 ㈜파토스 (이하 \'회사\')가 제공하는 위치기반서비스(이하 \'서비스\')에 관하여 회사와 이용계약을 체결한 고객(이하\'회원\')이 서비스를 이용함에 있어 필요한 회사와 고객의 권리 및 의무, 기타 제반사항을 규정함을 목표로 합니다.</string>
+    <string name="truck_agreement_2">FATOS truck은 안전운전을 돕기 위한 보조 수단으로써 주행 중 데이터의 오류 등으로 발생하는 모든 사고에 대한 민형사상 일체이 책임이 없습니다. 반드시 실제 도로 상황 및 교통규제와 법규 등을 숙지하시고 사용해주십시오.</string>
+    <string name="truck_agreement_3">본인은 ㈜파토스에서 제공하는 FATOS truck 서비스를 이용하기 위해 하기와 같이 ㈜파토스가 SK텔레콤㈜ 에게 본인의 개인정보를 제공하는 것에 동의합니다. SK텔레콤㈜ 의 개인정보 이용목적 : ... </string>
+
 </resources>
