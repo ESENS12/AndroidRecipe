@@ -3,16 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".MainActivity"
     >
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:padding="0dip"
         android:weightSum="100">
-
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -20,7 +19,6 @@
             android:background="@color/fmp_setting_background_color"
             android:orientation="vertical"
             android:weightSum="7.991">
-
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
