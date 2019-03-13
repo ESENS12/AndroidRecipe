@@ -12,5 +12,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
+        overFlow();
+    }
+
+
+    //오류유발 함수
+    private void overFlow(){
+        this.overFlow();
     }
 }
