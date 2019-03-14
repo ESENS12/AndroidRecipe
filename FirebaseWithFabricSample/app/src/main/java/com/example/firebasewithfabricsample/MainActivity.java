@@ -11,17 +11,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //build config에서 debuggable d
         boolean isDebuggable =  ( 0 != ( getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE ) );
+        if(BuildConfig.DEBUG){
 
-        if(isDebuggable){
-            //debug version.. not use Crashlytics
         }else{
-            //release version.. start Crashlytics
             Fabric.with(this, new Crashlytics());
+            overFlow();
         }
 
         setContentView(R.layout.activity_main);
-        //overFlow();
+
     }
 
 
