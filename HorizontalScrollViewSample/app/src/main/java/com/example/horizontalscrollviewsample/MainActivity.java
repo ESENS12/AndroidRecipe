@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         next = (LinearLayout) findViewById(R.id.next);
         horizontalScrollView = (HorizontalScrollView) findViewById(R.id.hsv);
         gestureDetector = new GestureDetector(new MyGestureDetector());
-        asthmaActionPlan = (LinearLayout) findViewById(R.id.asthma_action_plan);
+        //asthmaActionPlan = (LinearLayout) findViewById(R.id.asthma_action_plan);
         controlledMedication = (LinearLayout) findViewById(R.id.controlled_medication);
         asNeededMedication = (LinearLayout) findViewById(R.id.as_needed_medication);
         rescueMedication = (LinearLayout) findViewById(R.id.rescue_medication);
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         layouts = new ArrayList<LinearLayout>();
         params = new LinearLayout.LayoutParams(viewWidth, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        asthmaActionPlan.setLayoutParams(params);
+        //asthmaActionPlan.setLayoutParams(params);
         controlledMedication.setLayoutParams(params);
         asNeededMedication.setLayoutParams(params);
         rescueMedication.setLayoutParams(params);
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         wheezeRate.setLayoutParams(params);
         peakFlow.setLayoutParams(params);
 
-        layouts.add(asthmaActionPlan);
+        //layouts.add(asthmaActionPlan);
         layouts.add(controlledMedication);
         layouts.add(asNeededMedication);
         layouts.add(rescueMedication);

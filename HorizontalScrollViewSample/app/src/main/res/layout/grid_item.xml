@@ -3,9 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    <ImageView
+    <TextView
         android:id="@+id/imageView1"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:src="@drawable/ic_launcher_foreground" />
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:text="6.5M"
+        android:textSize="30dp"
+
+         />
 </LinearLayout>
