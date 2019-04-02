@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout.LayoutParams params;
     LinearLayout next, prev;
     Button btn_add;
-
+    private final static String TAG = MainActivity.class.getSimpleName();
     int viewWidth;
     GestureDetector gestureDetector = null;
     HorizontalScrollView horizontalScrollView;
@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_backup);
-
-        gestureDetector = new GestureDetector(new MyGestureDetector());
 
 //        prev = (LinearLayout) findViewById(R.id.prev);
 //        next = (LinearLayout) findViewById(R.id.next);
@@ -58,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
         viewWidth = mWidth / 3;
         //innerlayout = (LinearLayout)findViewById(R.id.innerLay);
 
-
-
         horizontalScrollView = (HorizontalScrollView) findViewById(R.id.hsv);
         innerlayout = (LinearLayout)horizontalScrollView.getChildAt(0);
         createMoreView();
@@ -67,41 +63,6 @@ public class MainActivity extends AppCompatActivity {
 
         //layouts.add(new LinearLayout(this))
 
-
-//        //asthmaActionPlan = (LinearLayout) findViewById(R.id.asthma_action_plan);
-//        //controlledMedication = (LinearLayout) findViewById(R.id.controlled_medication);
-//        asNeededMedication = (LinearLayout) findViewById(R.id.as_needed_medication);
-//        //rescueMedication = (LinearLayout) findViewById(R.id.rescue_medication);
-////        yourSymtoms = (LinearLayout) findViewById(R.id.your_symptoms);
-//        yourTriggers = (LinearLayout) findViewById(R.id.your_triggers);
-//        wheezeRate = (LinearLayout) findViewById(R.id.wheeze_rate);
-//        peakFlow = (LinearLayout) findViewById(R.id.peak_flow);
-//
-//
-//        Display display = getWindowManager().getDefaultDisplay();
-//        mWidth = display.getWidth(); // deprecated
-//        viewWidth = mWidth / 3;
-//        layouts = new ArrayList<LinearLayout>();
-//        params = new LinearLayout.LayoutParams(viewWidth, LinearLayout.LayoutParams.WRAP_CONTENT);
-//
-//        //asthmaActionPlan.setLayoutParams(params);
-////        controlledMedication.setLayoutParams(params);
-//        asNeededMedication.setLayoutParams(params);
-//        //rescueMedication.setLayoutParams(params);
-////        yourSymtoms.setLayoutParams(params);
-//        yourTriggers.setLayoutParams(params);
-//        wheezeRate.setLayoutParams(params);
-//        peakFlow.setLayoutParams(params);
-//
-//        //layouts.add(asthmaActionPlan);
-//        layouts.add(controlledMedication);
-//        layouts.add(asNeededMedication);
-//        layouts.add(rescueMedication);
-//        layouts.add(yourSymtoms);
-//        layouts.add(yourTriggers);
-//        layouts.add(wheezeRate);
-//        layouts.add(peakFlow);
-//
 //        next.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -130,6 +91,20 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 //
+
+        horizontalScrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                if (scrollX < oldScrollX) {
+                    currPosition = getVisibleViews("left");
+                } else {
+                    currPosition = getVisibleViews("right");
+                }
+
+                Log.d(TAG,"currPosition : " + currPosition);
+            }
+        });
+
 //        horizontalScrollView.setOnTouchListener(new View.OnTouchListener() {
 //            @Override
 //            public boolean onTouch(View v, MotionEvent event) {
@@ -141,43 +116,51 @@ public class MainActivity extends AppCompatActivity {
 //        });
     }
 
-    class MyGestureDetector extends GestureDetector.SimpleOnGestureListener {
-        @Override
-        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-                               float velocityY) {
-            if (e1.getX() < e2.getX()) {
-                currPosition = getVisibleViews("left");
-            } else {
-                currPosition = getVisibleViews("right");
-            }
 
-            horizontalScrollView.smoothScrollTo(layouts.get(currPosition)
-                    .getLeft(), 0);
-            return true;
-        }
-    }
-
-    /**
-     * 1. adapter를 통해서 view 추가(event 발생 -> 어댑터에 add->어댑터는 list에..)
-     *
-     *
-     *
-     * **/
-
+    //todo 동적으로 추가한 view 에만 index가 잡힌다..
 
     public int getVisibleViews(String direction) {
         Rect hitRect = new Rect();
         int position = 0;
+        int rightCounter = 0;
+        for (int i = 0; i < layouts.size(); i++) {
+            try{
+                LinearLayout ll = (LinearLayout)horizontalScrollView.getChildAt(0);
+                if (ll.getChildAt(i).getLocalVisibleRect(hitRect)) {
+                    if (direction.equals("left")) {
+                        position = i;
+                        break;
+                    } else if (direction.equals("right")) {
 
-        for (int i = 0; i < 4; i++) {
-            if (direction.equals("left")) {
-                position = 0;
-            } else if (direction.equals("right")) {
-                position = 4;
+                        rightCounter++;
+                        position = i;
+                        if (rightCounter == 2)
+                            break;
+                    }
+                }
+            }catch (Exception e){
+                Log.e(TAG,"EXCEPTION!" + e.toString());
             }
+
         }
         return position;
     }
+
+//
+//    public int getVisibleViews(String direction) {
+//        Rect hitRect = new Rect();
+//        int position = 0;
+//
+//        for (int i = 0; i < 4; i++) {
+//            if (direction.equals("left")) {
+//                position = 0;
+//            } else if (direction.equals("right")) {
+//                position = 4;
+//            }
+//        }
+//        return position;
+//    }
+
 
     public void createMoreView(){
         params = new LinearLayout.LayoutParams(viewWidth, LinearLayout.LayoutParams.MATCH_PARENT);
@@ -190,6 +173,8 @@ public class MainActivity extends AppCompatActivity {
             LinearLayout ll = new LinearLayout(this);
             ll.setLayoutParams(params);
             ll.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+            params.gravity = Gravity.CENTER_HORIZONTAL;
+            tv.setLayoutParams(params);
             ll.addView(tv);
             innerlayout.addView(ll);
             layouts.add(ll);
@@ -198,24 +183,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//    public int getVisibleViews(String direction) {
-//        Rect hitRect = new Rect();
-//        int position = 0;
-//        int rightCounter = 0;
-//        for (int i = 0; i < layouts.size(); i++) {
-//            if (layouts.get(i).getLocalVisibleRect(hitRect)) {
-//                if (direction.equals("left")) {
-//                    position = i;
-//                    break;
-//                } else if (direction.equals("right")) {
-//                    rightCounter++;
-//                    position = i;
-//                    if (rightCounter == 2)
-//                        break;
-//                }
-//            }
-//        }
-//        return position;
-//    }
 }
 
