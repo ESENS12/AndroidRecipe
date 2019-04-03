@@ -10,7 +10,7 @@
         android:layout_alignParentTop="true"
         android:fillViewport="true"
         android:measureAllChildren="false"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/m_s_setting_car_flicking_nor"
         android:scrollbars="none" >
         <LinearLayout
             android:id="@+id/topview"
@@ -36,11 +36,11 @@
         android:paddingLeft="5dip"
         android:paddingRight="5dip"
         android:descendantFocusability="blocksDescendants" >
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_foreground"
-            />
+        <!--<ImageView-->
+            <!--android:layout_width="80dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/ic_launcher_foreground"-->
+            <!--/>-->
     </LinearLayout>
     <LinearLayout
         android:id="@+id/next"
@@ -50,12 +50,38 @@
         android:layout_centerVertical="true"
         android:paddingLeft="5dip"
         android:paddingRight="5dip"
+
         android:descendantFocusability="blocksDescendants" >
-        <ImageView
-            android:layout_width="80dp"
+        <!--<ImageView-->
+            <!--android:layout_width="80dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/ic_launcher_foreground"-->
+            <!--/>-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/centerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:background="@drawable/user_button_dis"
+        android:descendantFocusability="blocksDescendants" >
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_foreground"
-            />
+            android:text="차량 총 높이"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textAlignment="gravity"
+        />
+
     </LinearLayout>
 
 
@@ -66,4 +92,6 @@
         android:layout_centerInParent="true"
         android:text="Add more!"
         />
+
+    <include android:id="@+id/gridItem" layout="@layout/grid_item" android:visibility="gone"/>
 </RelativeLayout>

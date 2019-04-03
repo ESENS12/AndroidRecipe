@@ -1,5 +1,6 @@
 package com.example.horizontalscrollviewsample;
 
+import android.content.Context;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +9,11 @@ import android.util.Log;
 import android.view.Display;
 import android.view.GestureDetector;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
@@ -23,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout asthmaActionPlan, controlledMedication, asNeededMedication,
             rescueMedication, yourSymtoms, yourTriggers, wheezeRate, peakFlow, myNewSample, innerlayout;
     LinearLayout.LayoutParams params;
-    LinearLayout next, prev;
+    LinearLayout next, prev, gridViewItem;
     Button btn_add;
     private final static String TAG = MainActivity.class.getSimpleName();
     int viewWidth;
@@ -39,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_backup);
 
-//        prev = (LinearLayout) findViewById(R.id.prev);
-//        next = (LinearLayout) findViewById(R.id.next);
+        prev = (LinearLayout) findViewById (R.id.prev);
+        next = (LinearLayout) findViewById (R.id.next);
 
         layouts = new ArrayList<LinearLayout>();
         btn_add = (Button)findViewById(R.id.btn_add);
@@ -51,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View gridView  = inflater.inflate(R.layout.grid_item, null);
+        gridViewItem = (LinearLayout)gridView.findViewById(R.id.gridItemView);
+
         Display display = getWindowManager().getDefaultDisplay();
         mWidth = display.getWidth(); // deprecated
         viewWidth = mWidth / 3;
@@ -59,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
         horizontalScrollView = (HorizontalScrollView) findViewById(R.id.hsv);
         innerlayout = (LinearLayout)horizontalScrollView.getChildAt(0);
         createMoreView();
-        //Log.d("asd","asd");
 
         //layouts.add(new LinearLayout(this))
 
@@ -117,8 +123,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //todo 동적으로 추가한 view 에만 index가 잡힌다..
-
     public int getVisibleViews(String direction) {
         Rect hitRect = new Rect();
         int position = 0;
@@ -166,17 +170,39 @@ public class MainActivity extends AppCompatActivity {
         params = new LinearLayout.LayoutParams(viewWidth, LinearLayout.LayoutParams.MATCH_PARENT);
         for (int i=0; i<10; i++){
 
-            TextView tv = new TextView(this);
-            tv.setText(""+i);
-            tv.setTextSize(20f);
+//            TextView tv = new TextView(this);
+//            LinearLayout ll = gridViewItem;
+//
+//            //TextView tv = (TextView) gridViewItem.getChildAt(0);
+//            tv.setText(""+i);
+//            ll.addView(tv);
+//            innerlayout.addView(ll);
+//            innerlayout.addView(grid);
 
+
+            TextView tv = new TextView(this);
+            TextView tv2 = new TextView(this);
+
+            tv.setText(""+i);
+            tv2.setText("m");
+            tv.setGravity(Gravity.CENTER);
+            tv2.setGravity(Gravity.RIGHT);
+            tv.setTextSize(46f);
+            tv2.setTextSize(32f);
+            tv.setTextColor(getResources().getColor(R.color.white));
+            tv2.setTextColor(getResources().getColor(R.color.white));
+            //LinearLayout grid = new LinearLayout(this);
             LinearLayout ll = new LinearLayout(this);
             ll.setLayoutParams(params);
-            ll.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+            //ll.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+
             params.gravity = Gravity.CENTER_HORIZONTAL;
             tv.setLayoutParams(params);
+            tv2.setLayoutParams(params);
             ll.addView(tv);
+            ll.addView(tv2);
             innerlayout.addView(ll);
+
             layouts.add(ll);
         }
     }
