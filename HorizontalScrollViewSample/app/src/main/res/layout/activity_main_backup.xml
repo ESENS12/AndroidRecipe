@@ -75,7 +75,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="차량 총 높이"
+            android:text="인덱스"
             android:textColor="#FFFFFF"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
