@@ -1,5 +1,6 @@
 package com.example.circledisplaysample;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,15 +12,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent intent = new Intent(this,CustomProgressBarActivity.class);
+        startActivity(intent);
+
         CircleDisplay cd = (CircleDisplay) findViewById(R.id.circleDisplay);
         cd.setAnimDuration(3000);
         //cd.setStartAngle(-180f);
-        cd.setValueWidthPercent(55f);
+        cd.setValueWidthPercent(24f);
         cd.setTextSize(36f);
-        cd.setColor(Color.BLUE);
+        cd.setColor(Color.GREEN);
         cd.setDrawText(true);
         //내부 데이터 알파값 , 0 주면 데이터만 표시됨
-        cd.setDimAlpha(10);
+        cd.setDimAlpha(0);
         cd.setDrawInnerCircle(true);
         cd.setFormatDigits(1);
         cd.setTouchEnabled(false);
@@ -33,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         //custom text array length = totalValue / stepSize
         cd.setStepSize(50f);
-        cd.setCustomText(text);
+        //cd.setCustomText(text);
         // cd.setCustomText(...); // sets a custom array of text
         cd.showValue(75f, 100f, true);
         //CircleDisplay cd = new CircleDisplay(this);

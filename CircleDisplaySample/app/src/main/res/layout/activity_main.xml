@@ -6,9 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_centerInParent="true"
+        android:indeterminate="false"
+        android:max="0"
+        android:progress="0"
+        android:progressDrawable="@drawable/custom_progressbar_drawable"
+        android:background="@drawable/custom_progressbar_drawable2"
+        android:secondaryProgress="0" />
+
     <com.example.circledisplaysample.CircleDisplay
         android:id="@+id/circleDisplay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="200dp"
+        android:layout_centerInParent="true"
+        android:padding="250dp"
+        android:layout_height="200dp" />
 
 </RelativeLayout>
