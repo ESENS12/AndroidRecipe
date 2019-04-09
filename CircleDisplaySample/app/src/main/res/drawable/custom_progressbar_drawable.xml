@@ -5,32 +5,15 @@
     android:pivotY="50%"
     android:toDegrees="270" >
 
-    <!--<shape-->
-        <!--android:shape="ring"-->
-        <!--android:useLevel="false" >-->
-
-        <!--<solid-->
-            <!--android:centerY="0.5"-->
-            <!--android:color="@android:color/holo_red_dark"-->
-            <!--&gt;-->
-        <!--</solid>-->
-        <!--&lt;!&ndash;<gradient&ndash;&gt;-->
-            <!--&lt;!&ndash;android:centerY="0.5"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:endColor="#FA5858"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:startColor="#0099CC"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:type="sweep"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:useLevel="false" />&ndash;&gt;-->
-
-    <!--</shape>-->
-
         <shape
-            android:thickness="3dp"
+            android:innerRadiusRatio="2.55"
+            android:thickness="10dp"
             android:shape="ring"
             android:useLevel="false" >
             <gradient
                 android:centerY="0.5"
                 android:endColor="#87cefa"
-                android:startColor="#00bfff"
+                android:startColor="#3bc6ed"
                 android:type="sweep"
                 android:useLevel="false" />
 
