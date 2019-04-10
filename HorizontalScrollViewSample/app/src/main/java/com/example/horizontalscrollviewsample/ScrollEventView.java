@@ -6,6 +6,13 @@ import android.widget.HorizontalScrollView;
 
 public class ScrollEventView extends HorizontalScrollView {
 
+    /**
+     *  reference
+     *
+     *  https://stackoverflow.com/questions/8181828/android-detect-when-scrollview-stops-scrolling
+     *  thanks to tulio84z
+     *
+     * **/
 
     private Runnable scrollerTask;
     private int initialPosition;
