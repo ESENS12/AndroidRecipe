@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="100dip"
+    tools:context=".MainActivity" >
+    <LinearLayout
+        android:id="@+id/bottom_summary"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:background="@drawable/m_s_setting_car_flicking_nor"
+        >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list_routelist"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/transparent"
+            tools:listitem="@layout/card_routepath" />
+    </LinearLayout>
+</RelativeLayout>

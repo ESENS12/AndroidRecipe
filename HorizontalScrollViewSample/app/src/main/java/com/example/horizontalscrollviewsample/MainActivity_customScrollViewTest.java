@@ -2,65 +2,48 @@ package com.example.horizontalscrollviewsample;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Display;
-import android.view.DragEvent;
 import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
-import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.text.Format;
 import java.util.ArrayList;
-import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity_customScrollViewTest extends AppCompatActivity {
 
-    boolean isEnable = false;
+    private final static String TAG = MainActivity_customScrollViewTest.class.getSimpleName();
+    ScrollEventView sc ;
 
-    LinearLayout asthmaActionPlan, controlledMedication, asNeededMedication,
-            rescueMedication, yourSymtoms, yourTriggers, wheezeRate, peakFlow, myNewSample, innerlayout;
+    LinearLayout innerlayout;
     LinearLayout.LayoutParams params, textParams;
-    LinearLayout next, prev, gridViewItem;
+    LinearLayout gridViewItem;
     Button btn_add;
-    private final static String TAG = MainActivity.class.getSimpleName();
     int viewWidth;
-    GestureDetector gestureDetector = null;
-    CustomScrollView horizontalScrollView;
     ArrayList<LinearLayout> layouts;
-    int parentLeft, parentRight;
     int mWidth;
-    int currPosition, prevPosition;
-    long currentTimeMills;
-
-    //int seconds = (int) (milliseconds / 1000) % 60 ;
+    int currPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_backup);
+        setContentView(R.layout.activity_main_eventviewtest);
 
-        Log.d(TAG,"density : " + this.getResources().getDisplayMetrics().density);
-        Log.d(TAG,"size : " + this.getResources().getDisplayMetrics().widthPixels);
-        prev = (LinearLayout) findViewById(R.id.prev);
-        next = (LinearLayout) findViewById(R.id.next);
+
 
         layouts = new ArrayList<LinearLayout>();
         btn_add = (Button) findViewById(R.id.btn_add);
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isEnable();
+                createMoreView();
             }
         });
 
@@ -72,49 +55,47 @@ public class MainActivity extends AppCompatActivity {
         mWidth = display.getWidth(); // deprecated
         viewWidth = mWidth / 3;
 
-        horizontalScrollView = (CustomScrollView) findViewById(R.id.hsv);
-        horizontalScrollView.setOnFlingListener(new CustomScrollView.OnFlingListener() {
-            @Override
-            public void onFlingStarted() {
-                Log.d(TAG, "onFlingStarted! time : " + Calendar.getInstance().getTimeInMillis());
 
-                long time = Calendar.getInstance().getTimeInMillis();
-                currentTimeMills = time - currentTimeMills;
+        sc = (ScrollEventView) findViewById(R.id.hsv);
 
-                int seconds = (int) (currentTimeMills / 1000) % 60 ;
-                Log.d(TAG, "onFlingStarted! time : " + seconds);
-            }
-            //item width = 692 * 40(maxIndex) = 27680
-            //layouts size = 43(start 0 , 좌우 양 끝 garbage view 1개씩 해서 +3)
-
-            @Override
-            public void onFlingStopped(int currPostion) {
-                int index = getVisibleViews();
-                Log.d(TAG, "onFlingStop!");
-                horizontalScrollView.smoothScrollTo(layouts.get(index).getLeft(), 0);
-            }
-        });
-
-        horizontalScrollView.setOnTouchListener(new View.OnTouchListener() {
+        sc.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
-                currentTimeMills = Calendar.getInstance().getTimeInMillis();
+                if (event.getAction() == MotionEvent.ACTION_UP) {
 
-                Log.d(TAG,"onTouch!" + currentTimeMills);
+                    sc.startScrollerTask();
+                }
 
                 return false;
-                //return isEnable;
-
             }
         });
 
-        innerlayout = (LinearLayout) horizontalScrollView.getChildAt(0);
-        createMoreView();
-    }
+        sc.setOnScrollStoppedListener(new ScrollEventView.OnScrollStoppedListener() {
+            @Override
+            public void onScrollStopped() {
+                currPosition = getVisibleViews();
 
-    public void isEnable(){
-        isEnable =! isEnable;
+                int left = layouts.get(currPosition).getLeft();
+                int right = layouts.get(currPosition).getRight();
+
+                int leftdistance = Math.abs(sc.getScrollX() - left);
+                int rightdistance = Math.abs(sc.getScrollX() - right);
+
+                //기준점
+                if(leftdistance < rightdistance){
+                    Log.d(TAG,"right !");
+                    sc.smoothScrollTo(layouts.get(currPosition).getLeft(), 0);
+
+                }else{
+                    Log.d(TAG,"left !");
+                    sc.smoothScrollTo(layouts.get(currPosition).getRight(), 0);
+                }
+
+            }
+        });
+        innerlayout = (LinearLayout) sc.getChildAt(0);
+        createMoreView();
     }
 
     public int getVisibleViews() {
@@ -122,11 +103,11 @@ public class MainActivity extends AppCompatActivity {
         int position = 0;
         for (int i = 0; i < layouts.size(); i++) {
             try{
-                LinearLayout ll = (LinearLayout)horizontalScrollView.getChildAt(0);
+                LinearLayout ll = (LinearLayout)sc.getChildAt(0);
                 if (ll.getChildAt(i).getLocalVisibleRect(hitRect)) {
-                        position = i;
-                        break;
-                    }
+                    position = i;
+                    break;
+                }
             }catch (Exception e){
                 Log.e(TAG,"EXCEPTION!" + e.toString());
             }
@@ -136,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
         return position;
     }
 
+    // add garbage data
     public void createMoreView(){
         //Log.d(TAG,"viewWIdth : "  +viewWidth);
         params = new LinearLayout.LayoutParams(viewWidth, LinearLayout.LayoutParams.MATCH_PARENT);
@@ -188,7 +170,6 @@ public class MainActivity extends AppCompatActivity {
             //ll.addView(tv2);
 
             innerlayout.addView(ll);
-
             layouts.add(ll);
         }
     }

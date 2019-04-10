@@ -74,17 +74,17 @@ public class CustomScrollView extends HorizontalScrollView {
          * 절대값으로 item/2 크기 이상 이동했다면 액션이벤트 발생 -> 방향 전달
          * **/
 
-        if(ev.getAction() == MotionEvent.ACTION_DOWN){
-            //Log.d(TAG,"Action Down! : " + getScrollX());
-            number = getScrollX();
-        }
-
+//        if(ev.getAction() == MotionEvent.ACTION_DOWN){
+//            //Log.d(TAG,"Action Down! : " + getScrollX());
+//            number = getScrollX();
+//        }
+//
         if(ev.getAction() == MotionEvent.ACTION_UP){
             if (mFlingListener != null) {
                 //Log.d(TAG ,"distance  : " + Math.abs(number - getScrollX()));
-                number = 0;
-                mFlingListener.onFlingStopped(getScrollX());
-                removeCallbacks(mScrollChecker);
+//                number = 0;
+//                mFlingListener.onFlingStopped(getScrollX());
+//                removeCallbacks(mScrollChecker);
                 //post(mScrollChecker);
             }
         }
