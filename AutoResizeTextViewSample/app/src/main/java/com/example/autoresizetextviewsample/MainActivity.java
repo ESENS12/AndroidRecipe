@@ -9,5 +9,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /**
+         *  change device orientation for test (AutoResizeTextView may Resize depend parents view size(with maxSize)
+         *
+         * **/
     }
 }

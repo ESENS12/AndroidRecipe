@@ -27,9 +27,9 @@
             <com.example.autoresizetextviewsample.AutoResizeTextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Resizeable TextView Sample. this text size is should resizeable implements parents view size"
+                android:text="Resizeable TextView Sample. this text size is should resize from parents view size"
                 android:maxLines="2"
-                android:textSize="20dp"
+                android:textSize="40dp"
                 android:autoSizeMaxTextSize="100dp"
                 />
         </LinearLayout>
@@ -43,9 +43,9 @@
             <android.support.v7.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Resizeable TextView Sample. this text size is should resizeable implements parents view size"
+                android:text="Appcompat TextView Sample. this view size is Not change. and contents may will not showing"
                 android:maxLines="2"
-                android:textSize="20dp"
+                android:textSize="40dp"
                 android:autoSizeMaxTextSize="100dp"
                 />
         </LinearLayout>
@@ -58,9 +58,9 @@
             <android.support.v7.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Resizeable TextView Sample. "
+                android:text="Basic TextView Style. "
                 android:maxLines="2"
-                android:textSize="20dp"
+                android:textSize="40dp"
                 android:autoSizeMaxTextSize="100dp"
                 />
         </LinearLayout>
