@@ -36,8 +36,6 @@ public class MainActivity_customScrollViewTest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_eventviewtest);
 
-
-
         layouts = new ArrayList<LinearLayout>();
         btn_add = (Button) findViewById(R.id.btn_add);
         btn_add.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +51,7 @@ public class MainActivity_customScrollViewTest extends AppCompatActivity {
 
         Display display = getWindowManager().getDefaultDisplay();
         mWidth = display.getWidth(); // deprecated
-        viewWidth = mWidth / 3;
+        viewWidth = mWidth / 9;
 
 
         sc = (ScrollEventView) findViewById(R.id.hsv);
@@ -76,24 +74,24 @@ public class MainActivity_customScrollViewTest extends AppCompatActivity {
             public void onScrollStopped() {
                 currPosition = getVisibleViews();
 
-                int left = layouts.get(currPosition).getLeft();
-                int right = layouts.get(currPosition).getRight();
+                LinearLayout ll = (LinearLayout) sc.getChildAt(0);
+
+                int left = ll.getChildAt(currPosition).getLeft();
+                int right = ll.getChildAt(currPosition).getRight();
 
                 int leftdistance = Math.abs(sc.getScrollX() - left);
                 int rightdistance = Math.abs(sc.getScrollX() - right);
 
                 //기준점
-                if(leftdistance < rightdistance){
-                    Log.d(TAG,"right !");
-                    sc.smoothScrollTo(layouts.get(currPosition).getLeft(), 0);
-
-                }else{
-                    Log.d(TAG,"left !");
-                    sc.smoothScrollTo(layouts.get(currPosition).getRight(), 0);
+                if(leftdistance > rightdistance) {
+                    currPosition += 1;
                 }
 
+                //반드시 해당 index view의 left를 기준으로 이동해야 함
+                sc.smoothScrollTo(ll.getChildAt(currPosition).getLeft(), 0);
             }
         });
+
         innerlayout = (LinearLayout) sc.getChildAt(0);
         createMoreView();
     }
@@ -101,9 +99,9 @@ public class MainActivity_customScrollViewTest extends AppCompatActivity {
     public int getVisibleViews() {
         Rect hitRect = new Rect();
         int position = 0;
+        LinearLayout ll = (LinearLayout)sc.getChildAt(0);
         for (int i = 0; i < layouts.size(); i++) {
             try{
-                LinearLayout ll = (LinearLayout)sc.getChildAt(0);
                 if (ll.getChildAt(i).getLocalVisibleRect(hitRect)) {
                     position = i;
                     break;
@@ -123,12 +121,12 @@ public class MainActivity_customScrollViewTest extends AppCompatActivity {
         params = new LinearLayout.LayoutParams(viewWidth, LinearLayout.LayoutParams.MATCH_PARENT);
         textParams = new LinearLayout.LayoutParams(viewWidth, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        for (int i=0; i<=42; i++){
+        for (int i=0; i<=88; i++){
 
             TextView tv = new TextView(this);
             TextView tv2 = new TextView(this);
-            double startData = (double) 1.8;
-            double commaData = (double) (i * 2) / 10;
+            double startData = (double) 1.6;
+            double commaData = (double) (i * 1) / 10;
             double savedData = (double) startData + commaData;
             savedData = Math.round(savedData*10)/10.0;
 
@@ -138,10 +136,10 @@ public class MainActivity_customScrollViewTest extends AppCompatActivity {
             tv.setLayoutParams(textParams);
             tv2.setLayoutParams(textParams);
 
-            //tv.setText("" + savedData+"m");
-            tv.setText(""+i);
+            tv.setText("" + savedData+"m");
+            //tv.setText(""+i);
 
-            if(savedData == 10.2 || savedData == 1.8)tv.setText("");
+            if(savedData >= 10.1 || savedData <= 1.9)tv.setText("");
 
             //tv.setText(""+i+".5m");
             //tv.measure(viewWidth/2 , LinearLayout.LayoutParams.WRAP_CONTENT);
