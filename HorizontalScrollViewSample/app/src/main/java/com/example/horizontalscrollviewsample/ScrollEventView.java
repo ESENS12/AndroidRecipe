@@ -2,17 +2,10 @@ package com.example.horizontalscrollviewsample;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.HorizontalScrollView;
 
 public class ScrollEventView extends HorizontalScrollView {
-
-    /**
-     *  reference
-     *
-     *  https://stackoverflow.com/questions/8181828/android-detect-when-scrollview-stops-scrolling
-     *  thanks to tulio84z
-     *
-     * **/
 
     private Runnable scrollerTask;
     private int initialPosition;
@@ -24,7 +17,12 @@ public class ScrollEventView extends HorizontalScrollView {
         void onScrollStopped();
     }
 
+    public interface OnScrollChangedListener{
+        void onScrollChanged(int x, int y);
+    }
+
     private OnScrollStoppedListener onScrollStoppedListener;
+    private OnScrollChangedListener onScrollChangedListener;
 
     public ScrollEventView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -32,20 +30,26 @@ public class ScrollEventView extends HorizontalScrollView {
         scrollerTask = new Runnable() {
 
             public void run() {
-
+                onScrollChangedListener.onScrollChanged(getScrollX(), initialPosition);
                 int newPosition = getScrollX();
                 if(initialPosition - newPosition == 0){//has stopped
-
+                    //Log.d(TAG,"not changed  : " +initialPosition + ", new : " + newPosition);
                     if(onScrollStoppedListener!=null){
 
                         onScrollStoppedListener.onScrollStopped();
                     }
                 }else{
+                    //onScrollChangedListener.onScrollChanged(getScrollX(),initialPosition);
+                    //onScrollChanged(getScrollX(),initialPosition);
                     initialPosition = getScrollX();
                     ScrollEventView.this.postDelayed(scrollerTask, newCheck);
                 }
             }
         };
+    }
+
+    public void onScrollChanged(int x, int oldX) {
+        Log.d(TAG,"onScrollChanged : " + oldX + " to  " + x);
     }
 
     public void setOnScrollStoppedListener(ScrollEventView.OnScrollStoppedListener listener){
@@ -56,6 +60,11 @@ public class ScrollEventView extends HorizontalScrollView {
 
         initialPosition = getScrollX();
         ScrollEventView.this.postDelayed(scrollerTask, newCheck);
+    }
+
+
+    public void setOnScrollChangedListener(ScrollEventView.OnScrollChangedListener onScrollChangedListener) {
+        this.onScrollChangedListener = onScrollChangedListener;
     }
 
 }

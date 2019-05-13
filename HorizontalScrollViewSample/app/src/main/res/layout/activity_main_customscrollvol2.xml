@@ -1,8 +1,28 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context=".MainActivity" >
+    android:orientation="horizontal"
+    android:weightSum="2"
+    tools:context=".MainActivity">
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="garbage Layout"
+            />
+    </RelativeLayout>
+
+<RelativeLayout
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    >
     <com.example.horizontalscrollviewsample.ScrollEventView
         android:id="@+id/hsv"
         android:layout_width="fill_parent"
@@ -21,44 +41,6 @@
 
         </LinearLayout>
     </com.example.horizontalscrollviewsample.ScrollEventView>
-
-    <!--<TextView-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="0.2dp"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:layout_below="@+id/hsv"-->
-        <!--android:background="@drawable/ic_launcher_foreground" />-->
-    <LinearLayout
-        android:id="@+id/prev"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:paddingLeft="5dip"
-        android:paddingRight="5dip"
-        android:descendantFocusability="blocksDescendants" >
-        <!--<ImageView-->
-            <!--android:layout_width="80dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:src="@drawable/ic_launcher_foreground"-->
-            <!--/>-->
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/next"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:paddingLeft="5dip"
-        android:paddingRight="5dip"
-
-        android:descendantFocusability="blocksDescendants" >
-        <!--<ImageView-->
-            <!--android:layout_width="80dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:src="@drawable/ic_launcher_foreground"-->
-            <!--/>-->
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/centerView"
@@ -85,6 +67,89 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/ll_leftIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_alignBottom="@+id/hsv"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/user_button_dis"
+        android:descendantFocusability="blocksDescendants"
+        android:paddingLeft="5dip"
+        android:layout_marginBottom="10dp"
+        android:paddingRight="5dip">
+
+        <TextView
+            android:id="@+id/tv_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="2.0M"
+            android:visibility="gone"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_centerIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_alignBottom="@+id/hsv"
+        android:visibility="gone"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:background="@drawable/user_button_dis"
+        android:layout_marginBottom="10dp"
+        android:descendantFocusability="blocksDescendants" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_center"
+            android:text="2.5M"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_rightIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:layout_alignBottom="@+id/hsv"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:background="@drawable/user_button_dis"
+        android:layout_marginBottom="10dp"
+        android:descendantFocusability="blocksDescendants" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_right"
+            android:text="3.0M"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="right"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/btn_add"
@@ -96,3 +161,7 @@
 
     <include android:id="@+id/gridItem" layout="@layout/grid_item" android:visibility="gone"/>
 </RelativeLayout>
+
+
+
+</LinearLayout>
