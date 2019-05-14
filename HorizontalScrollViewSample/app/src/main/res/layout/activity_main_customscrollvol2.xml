@@ -23,24 +23,79 @@
     android:layout_height="match_parent"
     android:layout_weight="1"
     >
-    <com.example.horizontalscrollviewsample.ScrollEventView
-        android:id="@+id/hsv"
+    <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="100dip"
         android:layout_alignParentTop="true"
         android:fillViewport="true"
-        android:measureAllChildren="false"
-        android:background="@drawable/m_s_setting_car_flicking_nor"
-        android:scrollbars="none" >
-        <LinearLayout
-            android:id="@+id/topview"
+        android:layout_height="100dip">
+
+        <com.example.horizontalscrollviewsample.ScrollEventView
+            android:id="@+id/hsv"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal" >
+            android:background="@color/scrollviewBackgroundVol2"
+            android:measureAllChildren="false"
+            android:scrollbars="none" >
 
+            <LinearLayout
+                android:id="@+id/topview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+            </LinearLayout>
+
+        </com.example.horizontalscrollviewsample.ScrollEventView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:weightSum="10"
+            android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="7"
+            android:src="@drawable/m_s_setting_car_flicking_layers4_nor"
+            />
+            <TextView
+                android:id="@id/tv_center"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:text="2.8m"
+                android:background="@color/scrollviewBackgroundVol2"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:textColor="@color/scroll_select_color"
+                android:textSize="24sp"
+                />
         </LinearLayout>
-    </com.example.horizontalscrollviewsample.ScrollEventView>
+        <TextView
+            android:id="@id/tv_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="총 높이"
+            android:layout_marginTop="8dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:layout_centerInParent="true"
+            android:background="@drawable/m_s_setting_car_flicking_layers3"
+            >
+        </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/centerView"
@@ -50,6 +105,7 @@
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:paddingLeft="5dip"
+        android:visibility="gone"
         android:paddingRight="5dip"
         android:background="@drawable/user_button_dis"
         android:descendantFocusability="blocksDescendants" >
@@ -67,88 +123,8 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/ll_leftIndex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_alignBottom="@+id/hsv"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/user_button_dis"
-        android:descendantFocusability="blocksDescendants"
-        android:paddingLeft="5dip"
-        android:layout_marginBottom="10dp"
-        android:paddingRight="5dip">
+    </RelativeLayout>
 
-        <TextView
-            android:id="@+id/tv_left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="2.0M"
-            android:visibility="gone"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_centerIndex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_alignBottom="@+id/hsv"
-        android:visibility="gone"
-        android:paddingLeft="5dip"
-        android:paddingRight="5dip"
-        android:background="@drawable/user_button_dis"
-        android:layout_marginBottom="10dp"
-        android:descendantFocusability="blocksDescendants" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_center"
-            android:text="2.5M"
-            android:textColor="#FFFFFF"
-            android:layout_gravity="left"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textAlignment="center"
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_rightIndex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="10dp"
-        android:visibility="gone"
-        android:layout_alignBottom="@+id/hsv"
-        android:paddingLeft="5dip"
-        android:paddingRight="5dip"
-        android:background="@drawable/user_button_dis"
-        android:layout_marginBottom="10dp"
-        android:descendantFocusability="blocksDescendants" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_right"
-            android:text="3.0M"
-            android:textColor="#FFFFFF"
-            android:layout_gravity="right"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textAlignment="center"
-            />
-
-    </LinearLayout>
 
 
     <Button

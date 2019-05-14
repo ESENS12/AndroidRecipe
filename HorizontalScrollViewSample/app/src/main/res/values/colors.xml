@@ -3,6 +3,7 @@
     <color name="txtroute1">#00EEF0</color>
     <color name="txtroute2">#BAF000</color>
     <color name="btnselectbg">#C7982C</color>
+    <color name="scroll_select_color">#ff8340</color>
     <color name="hlinecolor">#304d60</color>
     <color name="hlinecolor_tab">#00fcff</color>
     <color name="hlinecolor_summary_tab">#234f6d</color>
@@ -11,6 +12,7 @@
     <color name="btnbg">#47535a</color>
     <color name="btnbgforev">#153145</color>
     <color name="white">#FFFFFF</color>
+
     <color name="black_overlay">#66000000</color>
     <color name="transparent">#00000000</color>
     <color name="black">#000000</color>
@@ -26,7 +28,7 @@
     <color name="kakao_yellow">#E7BE2A</color>
     <color name="itemHighlight">#fbe4b2</color>
     <color name="routesummary_topcolor">#153145</color>
-
+    <color name="scrollviewBackgroundVol2">#434756</color>
 
     <color name="LightPink">#FFB6C1</color>
     <color name="Orange">#FFA500</color>

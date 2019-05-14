@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Display;
-import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -34,7 +33,7 @@ public class MainActivity_customScrollViewTest extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_eventviewtest);
+        setContentView(R.layout.activity_main_customscrollvol2);
 
         layouts = new ArrayList<LinearLayout>();
         btn_add = (Button) findViewById(R.id.btn_add);
