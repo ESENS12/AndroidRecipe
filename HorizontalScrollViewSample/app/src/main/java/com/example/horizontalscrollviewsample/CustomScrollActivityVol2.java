@@ -39,7 +39,7 @@ public class CustomScrollActivityVol2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_customscrollvol2);
 
-        tv_center = (TextView)findViewById(R.id.tv_center);
+        tv_center = (TextView)findViewById(R.id.tv_center_index);
 
         layouts = new ArrayList<LinearLayout>();
         btn_add = (Button) findViewById(R.id.btn_add);
@@ -76,7 +76,8 @@ public class CustomScrollActivityVol2 extends AppCompatActivity {
         sc.setOnScrollChangedListener(new ScrollEventView.OnScrollChangedListener() {
             @Override
             public void onScrollChanged(int x, int y) {
-                Log.d(TAG,"onScrollChanged (activity)");
+                Log.d(TAG,"getVisibleViews Position : " + getVisibleViews());
+                setText(tv_center, getVisibleViews());
             }
         });
 
@@ -120,7 +121,7 @@ public class CustomScrollActivityVol2 extends AppCompatActivity {
                         runOnUiThread(new Runnable(){
                             @Override
                             public void run() {
-                                double startData = (double) 1.9;
+                                double startData = (double) 2.0;
                                 double commaData = (double) (currPosition) / 10;
                                 double savedData = (double) startData + commaData;
                                 final String number = Double.toString(Math.round(savedData*10)/10.0);
@@ -133,6 +134,28 @@ public class CustomScrollActivityVol2 extends AppCompatActivity {
         });
 
         innerlayout = (LinearLayout) sc.getChildAt(0);
+    }
+
+    private void setText(TextView v, int index){
+        final TextView view = v;
+        final int data = index;
+
+        double startData = (double) 2.0;
+        double commaData = (double) (index) / 10;
+        double savedData = (double) startData + commaData;
+        final String number = Double.toString(Math.round(savedData*10)/10.0);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable(){
+                    @Override
+                    public void run() {
+                        view.setText(number);
+                    }
+                });
+            }
+        }).start();
     }
 
     public int getVisibleViews() {
@@ -162,9 +185,16 @@ public class CustomScrollActivityVol2 extends AppCompatActivity {
 
         int PointIndex = 0;
 
-        for (int i=0; i<=88; i++){
+        for(int j=0; j < 4; j++){
+            LinearLayout ll = new LinearLayout(this);
+            ll.setLayoutParams(params);
+            ll.setBackground(getResources().getDrawable(R.drawable.m_s_setting_new_dis_5));
+            innerlayout.addView(ll);
+        }
 
-            double startData = (double) 1.5;
+        for (int i=0; i<=89; i++){
+
+            double startData = (double) 1.6;
             double commaData = (double) (i * 1) / 10;
             double savedData = (double) startData + commaData;
             savedData = Math.round(savedData*10)/10.0;
@@ -179,7 +209,11 @@ public class CustomScrollActivityVol2 extends AppCompatActivity {
             ll.setBackground(getResources().getDrawable(R.drawable.m_s_setting_new5));
 
             if (PointIndex == i){
+
                 PointIndex += 5;
+
+                if(i==0) PointIndex = 4;
+                if(i==1) PointIndex = 5;
 
                 bottomTextParams.setMargins(0,0,0,10);
                 bottmtv1.setLayoutParams(bottomTextParams);

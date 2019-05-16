@@ -62,7 +62,7 @@
             android:src="@drawable/m_s_setting_car_flicking_layers4_nor"
             />
             <TextView
-                android:id="@id/tv_center"
+                android:id="@+id/tv_center_index"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="3"
@@ -75,7 +75,7 @@
                 />
         </LinearLayout>
         <TextView
-            android:id="@id/tv_center"
+            android:id="@+id/tv_center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
@@ -97,31 +97,6 @@
             >
         </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/centerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:paddingLeft="5dip"
-        android:visibility="gone"
-        android:paddingRight="5dip"
-        android:background="@drawable/user_button_dis"
-        android:descendantFocusability="blocksDescendants" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="인덱스"
-            android:textColor="#FFFFFF"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textAlignment="gravity"
-        />
-
-    </LinearLayout>
 
     </RelativeLayout>
 
