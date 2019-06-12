@@ -53,9 +53,9 @@ public class CustomAdapter  extends BaseAdapter {
         if (v == null) {
             holder = new ViewHolder();
             v = mInflater.inflate(R.layout.listview_item, null);
-            holder.name = (TextView)v.findViewById(R.id.tvName);
-            holder.contact = (TextView)v.findViewById(R.id.tvContact);
-            holder.no = (TextView)v.findViewById(R.id.tvEmail);
+            holder.name = (TextView)v.findViewById(R.id.tv_name);
+            holder.contact = (TextView)v.findViewById(R.id.tv_contact);
+            holder.no = (TextView)v.findViewById(R.id.tv_num);
 
             v.setTag(holder);
         } else {
@@ -66,7 +66,7 @@ public class CustomAdapter  extends BaseAdapter {
 
         holder.name.setText(info.name);
         holder.contact.setText(info.phone);
-        holder.no.setText(info.no);
+        holder.no.setText(info.no+"");
 
         return v;
     }

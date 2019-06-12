@@ -10,7 +10,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/etName"
+            android:id="@+id/et_name"
             android:layout_width="80dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -18,7 +18,7 @@
             android:singleLine="true"/>
 
         <EditText
-            android:id="@+id/etContact"
+            android:id="@+id/et_contact"
             android:layout_width="80dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -26,7 +26,7 @@
             android:singleLine="true"/>
 
         <EditText
-            android:id="@+id/etEmail"
+            android:id="@+id/et_num"
             android:layout_width="80dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"

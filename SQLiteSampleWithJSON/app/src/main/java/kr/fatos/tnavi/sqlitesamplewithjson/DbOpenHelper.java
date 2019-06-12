@@ -10,7 +10,7 @@ import android.provider.BaseColumns;
 
 public class DbOpenHelper {
 
-    private static final String DATABASE_NAME = "mytest.db";
+    private static final String DATABASE_NAME = "test_1.db";
     private static final int DATABASE_VERSION = 1;
     public static SQLiteDatabase mDB;
     private DataBaseHelper mDBHelper;
@@ -30,13 +30,11 @@ public class DbOpenHelper {
             super(context, name, factory, version);
         }
 
-        //최초 DB를 만들 때 한번만 호출
         @Override
         public void onCreate(SQLiteDatabase db) {
             db.execSQL(Entry.SQL_CREATE_TBL);
         }
 
-        //버전이 업데이트 되었을 경우 DB를 다시 만들어주는 메소드
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             //업데이트를 했는데 DB가 존재할 경우 onCreate를 다시 불러온다
@@ -54,9 +52,10 @@ public class DbOpenHelper {
 
         public static final String SQL_CREATE_TBL = "CREATE TABLE IF NOT EXISTS " + TBL_CONTACT + " " +
                 "(" +
+                _ID + " integer primary key autoincrement, " +
                 COL_NO + " INTEGER NOT NULL" + ", " +
                 COL_NAME + " TEXT" + ", " +
-                COL_PHONE + " TEXT" + ", " + ")";
+                COL_PHONE + " INTEGER" + ")";
 
         public static final String SQL_DROP_TBL = "DROP TABLE IF EXISTS " + TBL_CONTACT;
 
