@@ -10,8 +10,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import kr.fatos.tnavi.sqlitesamplewithjson.data.DataObject;
+import kr.fatos.tnavi.sqlitesamplewithjson.data.ViewHolder;
 
-public class CustomAdapter  extends BaseAdapter {
+public class CustomAdapter  extends BaseAdapter implements View.OnClickListener {
 
     private LayoutInflater mInflater;
     private ArrayList<DataObject> InfoArr;
@@ -46,6 +47,23 @@ public class CustomAdapter  extends BaseAdapter {
     }
 
 
+    public interface ListBtnClickListener {
+        void onListBtnClick(ViewHolder holder) ;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (this.listBtnClickListener != null) {
+            this.listBtnClickListener.onListBtnClick((ViewHolder)v.getTag()) ;
+        }
+    }
+
+    private ListBtnClickListener listBtnClickListener ;
+
+    public void setListBtnClickListener (ListBtnClickListener clickListener){
+        this.listBtnClickListener = clickListener ;
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
@@ -53,11 +71,13 @@ public class CustomAdapter  extends BaseAdapter {
         if (v == null) {
             holder = new ViewHolder();
             v = mInflater.inflate(R.layout.listview_item, null);
+
             holder.name = (TextView)v.findViewById(R.id.tv_name);
             holder.contact = (TextView)v.findViewById(R.id.tv_contact);
             holder.no = (TextView)v.findViewById(R.id.tv_num);
-
+            holder.index = position;
             v.setTag(holder);
+            v.setOnClickListener(this);
         } else {
             holder = (ViewHolder)v.getTag();
         }
@@ -71,10 +91,4 @@ public class CustomAdapter  extends BaseAdapter {
         return v;
     }
 
-
-    private class ViewHolder {
-        TextView name;
-        TextView contact;
-        TextView no;
-    }
 }
