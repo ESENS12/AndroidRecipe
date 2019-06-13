@@ -117,23 +117,33 @@ public class DbOpenHelper {
         return mDB.update(Entry.TBL_CONTACT, values, "_id="+id, null) > 0;
     }
 
-    //입력한 id값을 가진 DB를 지우는 메소드
     public boolean deleteColumn(long id) {
         return mDB.delete(Entry.TBL_CONTACT, "_id=" + id, null) > 0;
     }
 
-    //입력한 전화번호 값을 가진 DB를 지우는 메소드
     public boolean deleteColumn(String number) {
         return mDB.delete(Entry.TBL_CONTACT, "contact="+number, null) > 0;
     }
 
-    //커서 전체를 선택하는 메소드
+
+    //string 검색어로 컬럼 삭제
+    public boolean deleteColumn(String entity, String search) {
+        Cursor c = mDB.query(Entry.TBL_CONTACT, null,
+                entity + "= "+"'"+search+"'", null, null, null, null);
+
+        if (c != null && c.getCount() != 0)
+            c.moveToFirst();
+
+        return deleteColumn(c.getInt(0));
+    }
+
     public Cursor getAllColumns() {
         return mDB.query(Entry.TBL_CONTACT, null, null, null, null, null, null);
     }
 
-    //ID 컬럼 얻어오기
+
     public Cursor getColumn(long id) {
+
         Cursor c = mDB.query(Entry.TBL_CONTACT, null,
                 "_id="+id, null, null, null, null);
         //받아온 컬럼이 null이 아니고 0번째가 아닐경우 제일 처음으로 보냄
@@ -143,8 +153,8 @@ public class DbOpenHelper {
     }
 
     //이름으로 검색하기 (rawQuery)
-    public Cursor getMatchName(String name) {
-        Cursor c = mDB.rawQuery( "Select * from address where name" + "'" + name + "'", null);
+    public Cursor getMatchName(String search) {
+        Cursor c = mDB.rawQuery( "Select * from " + Entry.TBL_CONTACT + " where NAME" + " '" + search + "'", null);
         return c;
     }
 

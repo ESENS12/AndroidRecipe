@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -26,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
     private Cursor mCursor;
     private DataObject mInfoClass;
     private CustomAdapter mAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +59,16 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
 
     @Override
     public void onListBtnClick(ViewHolder holder) {
-        Log.d(TAG,"onListBtnClick : " + holder.index);
 
+        //index는 Autoincrement 인덱스값이므로(만약 key를 따로 매핑한다면 다른 방식으로 쿼리를 넘겨줘야함)
+        if(dBhelper.deleteColumn(holder.index+1)){
+            Toast.makeText(MainActivity.this, "DELETE ITEM : "+holder.index, Toast.LENGTH_SHORT).show();
+        }else if(dBhelper.deleteColumn(DbOpenHelper.Entry.COL_NAME, holder.name.getText().toString())){
+            Toast.makeText(MainActivity.this, "DELETE ITEM : "+holder.index, Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(MainActivity.this, "DELETE FAILED", Toast.LENGTH_SHORT).show();
+        }
+        onDataChanged();
     }
 
     private void setLayout() {
@@ -74,17 +82,20 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
     }
 
     public void btnAdd(View v) {
-        //추가를 누를 경우 EditText에 있는 String 값을 다 가져옴
+
         dBhelper.insertColumn(
                 mEditTexts[0].getText().toString().trim(),
                 mEditTexts[1].getText().toString().trim(),
                 Integer.parseInt(mEditTexts[2].getText().toString())
         );
-        //ArrayList 내용 삭제
+
+        onDataChanged();
+    }
+
+    private void onDataChanged(){
+
         mInfoArr.clear();
-
         CursorToArray();
-
         mAdapter.setArrayList(mInfoArr);
         mAdapter.notifyDataSetChanged();
         //Cursor 닫기
