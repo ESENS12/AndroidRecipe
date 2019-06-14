@@ -12,6 +12,7 @@ public class DbOpenHelper {
 
     private static final String DATABASE_NAME = "test_1.db";
     private static final int DATABASE_VERSION = 1;
+    private final String TAG = "DBHelper :: ";
     public static SQLiteDatabase mDB;
     private DataBaseHelper mDBHelper;
     private Context mCtx;
@@ -117,6 +118,7 @@ public class DbOpenHelper {
         return mDB.update(Entry.TBL_CONTACT, values, "_id="+id, null) > 0;
     }
 
+
     public boolean deleteColumn(long id) {
         return mDB.delete(Entry.TBL_CONTACT, "_id=" + id, null) > 0;
     }
@@ -154,7 +156,9 @@ public class DbOpenHelper {
 
     //이름으로 검색하기 (rawQuery)
     public Cursor getMatchName(String search) {
-        Cursor c = mDB.rawQuery( "Select * from " + Entry.TBL_CONTACT + " where NAME" + " '" + search + "'", null);
+        String[] entity = new String[1];
+        entity[0] = search;
+        Cursor c = mDB.rawQuery( "Select * from " + Entry.TBL_CONTACT + " where NAME = ?" , entity , null);
         return c;
     }
 

@@ -13,13 +13,15 @@ import kr.fatos.tnavi.sqlitesamplewithjson.data.DataObject;
 import kr.fatos.tnavi.sqlitesamplewithjson.data.ViewHolder;
 
 public class CustomAdapter  extends BaseAdapter implements View.OnClickListener {
-
+    private Context mContext;
     private LayoutInflater mInflater;
     private ArrayList<DataObject> InfoArr;
     private ViewHolder holder;
+    private int mSelectedItem;
 
     public CustomAdapter(Context c, ArrayList<DataObject> array) {
         mInflater = LayoutInflater.from(c);
+        mContext = c;
         InfoArr = array;
     }
 
@@ -54,7 +56,8 @@ public class CustomAdapter  extends BaseAdapter implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         if (this.listBtnClickListener != null) {
-            this.listBtnClickListener.onListBtnClick((ViewHolder)v.getTag()) ;
+            this.listBtnClickListener.onListBtnClick((ViewHolder)v.getTag());
+            mSelectedItem = ((ViewHolder) v.getTag()).index;
         }
     }
 
@@ -80,6 +83,12 @@ public class CustomAdapter  extends BaseAdapter implements View.OnClickListener 
             v.setOnClickListener(this);
         } else {
             holder = (ViewHolder)v.getTag();
+        }
+
+        if (position == mSelectedItem) {
+            v.setBackgroundColor(mContext.getResources().getColor(R.color.colorAccent));
+        }else{
+            v.setBackgroundColor(mContext.getResources().getColor(R.color.white));
         }
 
         DataObject info = InfoArr.get(position);

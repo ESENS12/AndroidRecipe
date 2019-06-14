@@ -33,19 +33,53 @@
             android:hint="번호"
             android:singleLine="true"/>
 
-        <Button
-            android:id="@+id/btnAdd"
-            android:layout_width="80dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:onClick="btnAdd"
-            android:text="추가"/>
     </LinearLayout>
 
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/ll_top"></ListView>
+        android:layout_below="@id/ll_bottom"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_below="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="80dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="추가"/>
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="80dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="btnAdd"
+            android:text="삭제"/>
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="80dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="갱신"/>
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="80dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="조회"/>
+    </LinearLayout>
+
 </RelativeLayout>
