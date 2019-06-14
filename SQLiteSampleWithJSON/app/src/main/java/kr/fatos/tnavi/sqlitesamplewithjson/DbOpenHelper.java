@@ -7,6 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
+import android.util.Log;
 
 public class DbOpenHelper {
 
@@ -50,6 +51,8 @@ public class DbOpenHelper {
         public static final String COL_NO = "NUM";
         public static final String COL_NAME = "NAME";
         public static final String COL_PHONE = "PHONE";
+
+        public static final String SELECTION = COL_NAME + " LIKE ?";
 
         public static final String SQL_CREATE_TBL = "CREATE TABLE IF NOT EXISTS " + TBL_CONTACT + " " +
                 "(" +
@@ -100,6 +103,19 @@ public class DbOpenHelper {
         values.put(Entry.COL_PHONE, phone);
         values.put(Entry.COL_NO, no);
         return mDB.insert(Entry.TBL_CONTACT, null, values);
+    }
+
+    public void selectColumn(int number){
+        Cursor c = mDB.query(Entry.TBL_CONTACT, null,null,null,null,null,null);
+        while (c.moveToNext()){
+            int no = c.getInt(c.getColumnIndex(Entry.COL_NO));
+            if(number == no){
+                Log.d(TAG,"find(id) : " + c.getInt(c.getColumnIndex("_id")));
+                Log.d(TAG,"find(name) : " + c.getString(c.getColumnIndex(Entry.COL_NAME)));
+                Log.d(TAG,"find(phone) : " + c.getString(c.getColumnIndex(Entry.COL_PHONE)));
+                Log.d(TAG,"find(no) : " + c.getInt(c.getColumnIndex(Entry.COL_NO)));
+            }
+        }
     }
 
     /**

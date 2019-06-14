@@ -86,6 +86,7 @@ public class CustomAdapter  extends BaseAdapter implements View.OnClickListener 
         }
 
         if (position == mSelectedItem) {
+
             v.setBackgroundColor(mContext.getResources().getColor(R.color.colorAccent));
         }else{
             v.setBackgroundColor(mContext.getResources().getColor(R.color.white));

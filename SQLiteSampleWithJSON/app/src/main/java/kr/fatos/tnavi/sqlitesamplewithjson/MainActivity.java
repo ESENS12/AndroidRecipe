@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
     @Override
     public void onListBtnClick(ViewHolder holder) {
 //        mAdapter.notifyDataSetChanged();
+        dBhelper.selectColumn(Integer.parseInt(holder.no.getText().toString()));
 
         //index는 Autoincrement 인덱스값이므로(만약 key를 따로 매핑한다면 다른 방식으로 쿼리를 넘겨줘야함)
 //        if(dBhelper.deleteColumn(holder.index+1)){
