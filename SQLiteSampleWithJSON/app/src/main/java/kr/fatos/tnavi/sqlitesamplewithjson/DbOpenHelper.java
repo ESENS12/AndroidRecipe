@@ -18,6 +18,16 @@ public class DbOpenHelper {
     private DataBaseHelper mDBHelper;
     private Context mCtx;
 
+    /**
+     *      SharedPreferences 활용해서 FirstRun시에 DB조회 후 있으면 초기화 해야함.
+     *
+     * **/
+
+    /**
+     * update 이후에 id 재정렬 필요(현재 리스트의 인덱스값으로.
+     *
+     *
+     * **/
     private class DataBaseHelper extends SQLiteOpenHelper {
 
         /**
@@ -59,7 +69,7 @@ public class DbOpenHelper {
                 _ID + " integer primary key autoincrement, " +
                 COL_NO + " INTEGER NOT NULL" + ", " +
                 COL_NAME + " TEXT" + ", " +
-                COL_PHONE + " INTEGER" + ")";
+                COL_PHONE + " TEXT" + ")";
 
         public static final String SQL_DROP_TBL = "DROP TABLE IF EXISTS " + TBL_CONTACT;
 
@@ -82,6 +92,12 @@ public class DbOpenHelper {
     public DbOpenHelper open() throws SQLException {
         mDBHelper = new DataBaseHelper(mCtx, DATABASE_NAME, null, DATABASE_VERSION);
         mDB = mDBHelper.getWritableDatabase();
+        return this;
+    }
+
+    //앱 삭제 후 재실행 시 table초기화를 위해서 onUpgrade를 사용해서 같은 버전으로 쿼리를 날린다
+    public DbOpenHelper reOpen() throws SQLException {
+        mDBHelper.onUpgrade(mDB,DATABASE_VERSION,DATABASE_VERSION);
         return this;
     }
 
@@ -120,6 +136,22 @@ public class DbOpenHelper {
         return -1;
     }
 
+    public void ShowAllColumnsLog(){
+        Cursor c = mDB.query(Entry.TBL_CONTACT, null,null,null,null,null,null);
+        while (c.moveToNext()){
+//            int no = c.getInt(c.getColumnIndex(Entry.COL_NO));
+//            if(number == no){
+                Log.d(TAG,"=======================");
+                Log.d(TAG,"find(id) : " + c.getInt(c.getColumnIndex("_id")));
+                Log.d(TAG,"find(name) : " + c.getString(c.getColumnIndex(Entry.COL_NAME)));
+                Log.d(TAG,"find(phone) : " + c.getString(c.getColumnIndex(Entry.COL_PHONE)));
+                Log.d(TAG,"find(no) : " + c.getInt(c.getColumnIndex(Entry.COL_NO)));
+                //return c.getInt(c.getColumnIndex("_id"));
+//            }
+        }
+//        return -1;
+    }
+
     /**
      * 기존 데이터베이스에 사용자가 변경할 값을 입력하면 값이 변경됨(업데이트)
      * @param id            데이터베이스 아이디
@@ -134,6 +166,21 @@ public class DbOpenHelper {
         values.put(Entry.COL_PHONE, phone);
         values.put(Entry.COL_NO, no);
         return mDB.update(Entry.TBL_CONTACT, values, "_id="+id, null) > 0;
+    }
+
+
+    public boolean updateAllColumnsId() {
+        Cursor c = getAllColumns();
+        int num = 0;
+        while(c.moveToNext()){
+            num +=1;
+            ContentValues values = new ContentValues();
+            values.put("_id", num);
+            if (c.getCount() != 0){
+                mDB.update(Entry.TBL_CONTACT, values, "_id="+c.getInt(0), null);
+            }
+        }
+        return true;
     }
 
     //id로 삭제
@@ -180,12 +227,8 @@ public class DbOpenHelper {
         return c;
     }
 
-    //not used
-    public Cursor getMatchName(String search) {
-        String[] entity = new String[1];
-        entity[0] = search;
-        Cursor c = mDB.rawQuery( "Select * from " + Entry.TBL_CONTACT + " where NAME = ?" , entity , null);
-        return c;
+    public void excuteRawQuery(String Query) {
+        mDB.execSQL(Query);
     }
 
 }

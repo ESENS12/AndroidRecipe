@@ -2,6 +2,7 @@ package kr.fatos.tnavi.sqlitesamplewithjson;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
     private CustomAdapter mAdapter;
     private Button btnAdd, btnDelete, btnUpdate, btnSearch;
     private ViewHolder lastChoice;
-
+    private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +41,24 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
 
         setLayout();
 
+        prefs = getSharedPreferences("kr.fatos.tnavi.sqlitesamplewithjson", MODE_PRIVATE);
+
         try{
             dBhelper.open();
         }catch (Exception e){
             Log.e(TAG,"EXCEPTION : " + e.toString());
         }
+
+        // 초기 실행인 경우
+        if (prefs.getBoolean("firstrun", true)) {
+            SharedPreferences.Editor editor = prefs.edit();
+            //첫 실행 flag 전환
+            editor.putBoolean("firstrun", false);
+            editor.apply();
+            dBhelper.excuteRawQuery(DbOpenHelper.Entry.SQL_DROP_TBL);
+            dBhelper.reOpen();
+        }
+
 
         //hardcoded sample data
 //        dBhelper.insertColumn("ESENS", "01011223344", 1);
@@ -84,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
                 break;
 
             case R.id.btnSearch:
+                dBhelper.ShowAllColumnsLog();
                 break;
 
             case R.id.btnUpdate:
@@ -153,6 +168,8 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
     }
 
     private void onDataChanged(){
+
+        dBhelper.updateAllColumnsId();
 
         mInfoArr.clear();
         CursorToArray();
