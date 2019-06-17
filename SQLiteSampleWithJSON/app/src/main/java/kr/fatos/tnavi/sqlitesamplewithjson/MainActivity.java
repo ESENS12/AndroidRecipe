@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
     private DataObject mInfoClass;
     private CustomAdapter mAdapter;
     private Button btnAdd, btnDelete, btnUpdate, btnSearch;
+    private ViewHolder lastChoice;
 
 
     @Override
@@ -70,12 +71,16 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
                         Integer.parseInt(mEditTexts[2].getText().toString())
                 );
 
-                dBhelper.getMatchName(mEditTexts[0].getText().toString().trim());
+//                dBhelper.getMatchName(mEditTexts[0].getText().toString().trim());
 
                 }
                 break;
 
-            case R.id.btnDelete:
+            case R.id.btnDelete:{
+
+                ListItemDelete();
+
+                }
                 break;
 
             case R.id.btnSearch:
@@ -88,9 +93,32 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
         onDataChanged();
     }
 
+
+    public void ListItemDelete(){
+        //선택이 없는 경우 첫번째 아이템 삭제
+        long _id = 0;
+
+        //select
+        if(lastChoice != null){
+            _id = dBhelper.selectColumn(Integer.parseInt(lastChoice.no.getText().toString()));
+        }else{
+            _id = dBhelper.selectColumn(0);
+        }
+
+        //delete
+        if(dBhelper.deleteColumn(_id)){
+            Toast.makeText(MainActivity.this, "DELETE ITEM", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(MainActivity.this, "DELETE FAILED", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
     @Override
     public void onListBtnClick(ViewHolder holder) {
 //        mAdapter.notifyDataSetChanged();
+
+        lastChoice = holder;
         dBhelper.selectColumn(Integer.parseInt(holder.no.getText().toString()));
 
         //index는 Autoincrement 인덱스값이므로(만약 key를 따로 매핑한다면 다른 방식으로 쿼리를 넘겨줘야함)

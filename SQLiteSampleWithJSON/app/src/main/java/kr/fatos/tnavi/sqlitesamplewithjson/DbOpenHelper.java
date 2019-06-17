@@ -105,7 +105,7 @@ public class DbOpenHelper {
         return mDB.insert(Entry.TBL_CONTACT, null, values);
     }
 
-    public void selectColumn(int number){
+    public long selectColumn(int number){
         Cursor c = mDB.query(Entry.TBL_CONTACT, null,null,null,null,null,null);
         while (c.moveToNext()){
             int no = c.getInt(c.getColumnIndex(Entry.COL_NO));
@@ -114,8 +114,10 @@ public class DbOpenHelper {
                 Log.d(TAG,"find(name) : " + c.getString(c.getColumnIndex(Entry.COL_NAME)));
                 Log.d(TAG,"find(phone) : " + c.getString(c.getColumnIndex(Entry.COL_PHONE)));
                 Log.d(TAG,"find(no) : " + c.getInt(c.getColumnIndex(Entry.COL_NO)));
+                return c.getInt(c.getColumnIndex("_id"));
             }
         }
+        return -1;
     }
 
     /**
@@ -134,13 +136,21 @@ public class DbOpenHelper {
         return mDB.update(Entry.TBL_CONTACT, values, "_id="+id, null) > 0;
     }
 
-
+    //id로 삭제
     public boolean deleteColumn(long id) {
         return mDB.delete(Entry.TBL_CONTACT, "_id=" + id, null) > 0;
     }
 
-    public boolean deleteColumn(String number) {
-        return mDB.delete(Entry.TBL_CONTACT, "contact="+number, null) > 0;
+    //커서 첫번째 컬럼 삭제
+    public boolean deleteColumn(Cursor c ) {
+
+        if (c != null && c.getCount() != 0){
+            //c.moveToFirst();
+            return deleteColumn(c.getInt(0));
+        }else{
+            return false;
+        }
+
     }
 
 
@@ -170,7 +180,7 @@ public class DbOpenHelper {
         return c;
     }
 
-    //이름으로 검색하기 (rawQuery)
+    //not used
     public Cursor getMatchName(String search) {
         String[] entity = new String[1];
         entity[0] = search;
