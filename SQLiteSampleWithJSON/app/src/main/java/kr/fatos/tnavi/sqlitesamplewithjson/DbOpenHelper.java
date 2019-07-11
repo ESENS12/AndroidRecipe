@@ -178,6 +178,10 @@ public class DbOpenHelper {
             values.put("_id", num);
             if (c.getCount() != 0){
                 mDB.update(Entry.TBL_CONTACT, values, "_id="+c.getInt(0), null);
+                Log.d(TAG,"updateAllColumnsId ---------------");
+                Log.d(TAG,"id : "  + c.getInt(0));
+                Log.d(TAG,"name: " + c.getString(1));
+
             }
         }
         return true;
@@ -214,6 +218,16 @@ public class DbOpenHelper {
 
     public Cursor getAllColumns() {
         return mDB.query(Entry.TBL_CONTACT, null, null, null, null, null, null);
+    }
+
+    public int getColumnId(long index) {
+
+        Cursor c = mDB.query(Entry.TBL_CONTACT, null,
+                "_id="+index, null, null, null, null);
+        if (c != null && c.getCount() != 0)
+            c.moveToFirst();
+
+        return c.getInt(c.getColumnIndex("_id"));
     }
 
 

@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -102,22 +104,62 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
                 break;
 
             case R.id.btnUpdate:
+                ListItemUpdate();
                 break;
         }
 
         onDataChanged();
     }
 
+    public void ListItemUpdate(){
 
-    public void ListItemDelete(){
-        //선택이 없는 경우 첫번째 아이템 삭제
-        long _id = 0;
+        long _id = getItemId();
 
-        //select
+        //리스트가 비어있는경우 실패 얼럿 후 리턴
+        if(_id < 0){
+            Toast.makeText(this, "Update Failed", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        boolean b_isUpdate = dBhelper.updateColumn(_id,
+                //name
+                mEditTexts[0].getText().toString().trim(),
+                //phone
+                mEditTexts[1].getText().toString().trim(),
+                //no
+                Integer.parseInt(mEditTexts[2].getText().toString()));
+
+        if(b_isUpdate){
+            onDataChanged();
+            Toast.makeText(this, "Update!", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "Update Failed", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public long getItemId(){
+        long _id = -1;
         if(lastChoice != null){
             _id = dBhelper.selectColumn(Integer.parseInt(lastChoice.no.getText().toString()));
         }else{
-            _id = dBhelper.selectColumn(0);
+            //없으면 리스트 첫번째 아이템에서 검색.
+            if(mListView.getChildCount() != 0 ){
+                RelativeLayout _rl = (RelativeLayout)mListView.getChildAt(0);
+                int no = Integer.parseInt(((TextView)((RelativeLayout)_rl.getChildAt(0)).getChildAt(2)).getText().toString());
+                _id = dBhelper.selectColumn(no);
+            }
+
+        }
+        return _id;
+    }
+
+    public void ListItemDelete(){
+
+        long _id = getItemId();
+
+        if(_id < 0) {
+            Toast.makeText(MainActivity.this, "DELETE FAILED", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         //delete
@@ -136,14 +178,6 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
         lastChoice = holder;
         dBhelper.selectColumn(Integer.parseInt(holder.no.getText().toString()));
 
-        //index는 Autoincrement 인덱스값이므로(만약 key를 따로 매핑한다면 다른 방식으로 쿼리를 넘겨줘야함)
-//        if(dBhelper.deleteColumn(holder.index+1)){
-//            Toast.makeText(MainActivity.this, "DELETE ITEM : "+holder.index, Toast.LENGTH_SHORT).show();
-//        }else if(dBhelper.deleteColumn(DbOpenHelper.Entry.COL_NAME, holder.name.getText().toString())){
-//            Toast.makeText(MainActivity.this, "DELETE ITEM : "+holder.index, Toast.LENGTH_SHORT).show();
-//        }else{
-//            Toast.makeText(MainActivity.this, "DELETE FAILED", Toast.LENGTH_SHORT).show();
-//        }
         onDataChanged();
     }
 
@@ -173,7 +207,7 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
 
         mInfoArr.clear();
         CursorToArray();
-        mAdapter.setArrayList(mInfoArr);
+//        mAdapter.setArrayList(mInfoArr);
         mAdapter.notifyDataSetChanged();
         //Cursor 닫기
         mCursor.close();
@@ -191,7 +225,7 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.Lis
 
         mCursor = null;
         mCursor = dBhelper.getAllColumns();
-        Log.i(TAG, "Count = " + mCursor.getCount());
+        Log.d(TAG, "Count = " + mCursor.getCount());
 
         while (mCursor.moveToNext()) {
             //InfoClass에 입력된 값을 압력
