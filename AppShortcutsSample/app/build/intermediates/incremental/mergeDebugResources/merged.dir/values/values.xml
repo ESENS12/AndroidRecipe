@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_new_website">Add New Website</string>
+    <string name="add_new_website_short">Add Website</string>
+    <string name="app_name">App Shortcuts Sample</string>
+    <string name="disable_shortcut">Disable</string>
+    <string name="enable_shortcut">Enable</string>
+    <string name="existing_shortcuts">Existing shortcuts:</string>
+    <string name="remove_shortcut">Remove</string>
+</resources>

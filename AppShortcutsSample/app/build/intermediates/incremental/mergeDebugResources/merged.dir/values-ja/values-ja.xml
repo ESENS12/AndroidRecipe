@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_new_website">ウェブサイト追加</string>
+    <string name="add_new_website_short">追加</string>
+    <string name="app_name">アプリのショートカットサンプル</string>
+    <string name="disable_shortcut">無効</string>
+    <string name="enable_shortcut">有効</string>
+    <string name="existing_shortcuts">既存のショートカット:</string>
+    <string name="remove_shortcut">削除</string>
+</resources>

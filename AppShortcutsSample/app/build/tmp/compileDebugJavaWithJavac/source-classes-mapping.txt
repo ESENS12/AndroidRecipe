@@ -1,0 +1,13 @@
+com/example/android/appshortcuts/Utils.java
+ com.example.android.appshortcuts.Utils
+com/example/android/appshortcuts/MyReceiver.java
+ com.example.android.appshortcuts.MyReceiver
+com/example/android/appshortcuts/Main.java
+ com.example.android.appshortcuts.Main
+ com.example.android.appshortcuts.Main$1
+ com.example.android.appshortcuts.Main$MyAdapter
+com/example/android/appshortcuts/ShortcutHelper.java
+ com.example.android.appshortcuts.ShortcutHelper
+ com.example.android.appshortcuts.ShortcutHelper$1
+com/example/android/appshortcuts/BuildConfig.java
+ com.example.android.appshortcuts.BuildConfig

@@ -1,0 +1,48 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/esens/AndroidRecipe/AppShortcutsSample/app/build/intermediates/res/merged/debug/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/esens/AndroidRecipe/AppShortcutsSample/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "18,19,17,22,23,20,21",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "797,857,739,1037,1090,919,986",
+                        "endColumns": "59,61,57,52,50,66,50",
+                        "endOffsets": "852,914,792,1085,1136,981,1032"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,115,177,235,288,339,406",
+                        "endColumns": "59,61,57,52,50,66,50",
+                        "endOffsets": "110,172,230,283,334,401,452"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/esens/AndroidRecipe/AppShortcutsSample/app/build/intermediates/res/merged/debug/values-ja_values-ja.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/esens/AndroidRecipe/AppShortcutsSample/app/src/main/res/values-ja/strings.xml",
+                    "from": {
+                        "startLines": "18,19,17,22,23,20,21",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "792,845,739,1004,1052,898,957",
+                        "endColumns": "52,52,52,47,46,58,46",
+                        "endOffsets": "840,893,787,1047,1094,952,999"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,108,161,214,262,309,368",
+                        "endColumns": "52,52,52,47,46,58,46",
+                        "endOffsets": "103,156,209,257,304,363,410"
+                    }
+                }
+            ]
+        }
+    ]
+}

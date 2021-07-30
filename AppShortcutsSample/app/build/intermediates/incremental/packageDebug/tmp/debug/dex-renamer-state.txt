@@ -1,0 +1,4 @@
+#Fri Jul 30 18:04:00 KST 2021
+base.0=/Users/esens/AndroidRecipe/AppShortcutsSample/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
